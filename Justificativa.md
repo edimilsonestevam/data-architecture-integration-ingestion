@@ -18,10 +18,8 @@ Uma Fintech necessita de transações ACID para garantir consistência financeir
 
 * ACID completo
 * Alta confiabilidade
-
 * Replicação nativa
 * Open Source
-
 * Excelente desempenho
 
 **Case**
@@ -36,7 +34,6 @@ Movimentação bancária e controle de saldo
 
 * Sessões de usuários
 * Tokens JWT
-
 * Consultas frequentes
 
 **Justificativa**
@@ -47,7 +44,6 @@ Operações bancárias exigem respostas rápidas
 
 * Armazenamento em memória
 * Latência inferior a 1 ms
-
 * Redução de carga no PostgreSQL
 
 **Case**
@@ -101,3 +97,5 @@ Ambiente de Ciência de Dados
 ---
 
 ## Conclusão
+
+A arquitetura proposta segue o conceito de **Modern Data Platform**, separando claramente os ambientes **OLTP (transacional)** e **OLAP (analítico)**. Essa abordagem garante que a QuantumFinance consiga crescer com segurança, suportar milhões de transações, processar eventos em tempo real, armazenar grandes volumes de dados e disponibilizar informações confiáveis para BI e Ciência de Dados, mantendo alta escalibilidade, desempenho e governança.
