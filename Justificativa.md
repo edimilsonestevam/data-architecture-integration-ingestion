@@ -3,6 +3,8 @@
 **1. Desenho da Solução**
 
 
+---
+
 **2. PostgreSQL - Banco Transacional Principal**
 
  **Uso**
