@@ -12,7 +12,7 @@
 
 **Justificativa**
 
-Uma Fintech necessita de transações ACID (Atomicidade, Consistência, Isolamento e Durabilidade) para garantir consistência financeira.
+Uma Fintech necessita de transações ACID (Atomicidade, Consistência, Isolamento e Durabilidade) para garantir consistência financeira
 
 **Vantagens**
 
