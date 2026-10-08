@@ -80,7 +80,7 @@ Ambiente de Ciência de Dados
 
 ---
 
-## Benefícios da Arquitetura
+**Benefícios da Arquitetura**
 
 | Requisito                   | Solução           |
 | --------------------------- | ------------------- |
@@ -96,6 +96,6 @@ Ambiente de Ciência de Dados
 
 ---
 
-## Conclusão
+**Conclusão**
 
 A arquitetura proposta segue o conceito de **Modern Data Platform**, separando claramente os ambientes **OLTP (transacional)** e **OLAP (analítico)**. Essa abordagem garante que a QuantumFinance consiga crescer com segurança, suportar milhões de transações, processar eventos em tempo real, armazenar grandes volumes de dados e disponibilizar informações confiáveis para BI e Ciência de Dados, mantendo alta escalibilidade, desempenho e governança.
