@@ -1,6 +1,9 @@
 ## Proposta de Arquitetura de Dados - QuantumFinance
 
-**1. PostgreSQL - Banco Transacional Principal**
+**1. Desenho da Solução**
+
+
+**2. PostgreSQL - Banco Transacional Principal**
 
  **Uso**
 
@@ -28,7 +31,7 @@ Movimentação bancária e controle de saldo
 
 ---
 
-**2. Redis - Cache e Baixa Latência**
+**3. Redis - Cache e Baixa Latência**
 
 **Uso**
 
