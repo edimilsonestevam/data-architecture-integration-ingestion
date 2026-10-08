@@ -1,3 +1,5 @@
+## Proposta de Arquitetura de Dados - QuantumFinance
+
 **1. PostgreSQL - Banco Transacional Principal**
 
  **Uso**
@@ -56,14 +58,46 @@ Consulta de saldo e perfil do cliente
 
 MongoDB - Dados Não Relacionais
 
+---
+
 Apache Kafka - Streaming de Eventos
+
+---
 
 Data Lake (S3 ou Azure Data Lake)
 
+---
+
 Apache Spark/Databricks
+
+---
 
 Data Warehouse (Snowflake)
 
+---
+
 Power BI
 
+---
+
 Ambiente de Ciência de Dados
+
+---
+
+## Benefícios da Arquitetura
+
+| Requisito                   | Solução           |
+| --------------------------- | ------------------- |
+| Transações financeiras    | PostgreSQL          |
+| Baixa latência             | Redis               |
+| Dados não estruturados     | MongoDB             |
+| Processamento em tempo real | Kafka               |
+| Armazenamento massivo       | Data Lake           |
+| Processamento distribuído  | Spark               |
+| Analytics corporativo       | Snowflake           |
+| Business Intelligence       | Power BI            |
+| Ciência de Dados           | Databricks e Python |
+
+---
+
+## Conclusão
