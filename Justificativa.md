@@ -2,7 +2,7 @@
 
 **1. Desenho da Solução**
 
-![1791566166094](image/Justificativa/1791566166094.png)
+![1791566993140](image/Justificativa/1791566993140.png)
 
 ---
 
