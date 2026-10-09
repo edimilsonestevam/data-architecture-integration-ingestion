@@ -4,11 +4,11 @@ A **QuantumFinance** está no mercado, e os investidores veem muito potencial na
 
 Essa arquitetura de dados, deve atender requisitos transacionais e analíticos, contemplando soluções para aplicações com necessidade não relacionais, transacionais e também o ambiente de análise e ciência de dados.
 
-**Entrega 01:**
+**Entrega 01**
 
 Desenho de arquitetura de dados para atender os requisitos acima, selecionando as melhores tecnologias de bancos e armazenamento de dados, justificando a esccolha de acordo com cada case.
 
-**Formato da Entrega 01:**
+**Formato da Entrega 01**
 
 Pode ser desenvolvimento em qualquer ferramenta que suporte a geração de diagramas.
 Entrega em formato compatível com o Microsoft Office ou PDF (para leitura).
