@@ -60,28 +60,29 @@ Consulta rápida do perfil do cliente e de informações de saldo previamente ar
 
 ---
 
-**3. MongoDB - Dados Não Relacionais**
+**3. MongoDB - Banco de Dados Não Relacional (NoSQL)**
 
 **Uso**
 
-* Cadastro de documentos
+* Armazenamento de documentos e metadados
 * Logs de aplicações
-* Histórico de navegação
-* Perfis flexíveis
+* Histórico de navegação dos usuários
+* Perfis de clientes com atributos variáveis
 
 **Justificativa**
 
-Todos os dados não possuem estrutura fixa
+Uma Fintech trabalha com dados de diferentes formatos e níveis de estruturação. O MongoDB armazena documentos em formato BSON, permitindo utilizar estruturas flexíveis e adaptar os modelos de dados conforme as necessidades da aplicação.
 
 **Vantagens**
 
-* Schema flexível
-* Escalabilidade horizontal
-* Fácil evolução dos modelos
+* Schema flexível: permite aramazenar documentos com estruturas diferentes na mesma coleção, respeitando as regras de validação configuradas
+* Escalabilidade horizontal: oferece particionamento de dados (sharding) para distribuir grandes volumes de informações
+* Evolução dos modelos: facilita a inclusão de novos atributos sem exigir que todos os documentos existentes tenham a mesma estrutura
+* Consulta e indexação: permite pesquisar documentos por diferentes campos e criar índices para otimizar as consultas
 
 **Case**
 
-Armazenamento de comprovantes e documentos KYC (Conheça o Seu Cliente)
+Armazenamento de metadados de comprovantes e documentos KYC (Conheça o Seu Cliente), além de informações complementares dos clientes.
 
 ---
 
