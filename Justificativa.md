@@ -209,7 +209,26 @@ Acompanhamento de crescimento da carteira de clientes
 
 ---
 
-Ambiente de Ciência de Dados
+**9. Ambiente de Ciência de Dados**
+
+**Ferramentas**
+
+* Jupyter Notebook
+* Python
+
+* MLflow
+* Databricks
+
+**Uso**
+
+* Previsão de inadimplência
+* Deteccção de fraude
+
+* Recomendação de produtos financeiros
+
+**Justificativa**
+
+Fintechs dependem fortemente de modelos preditivos
 
 ---
 
