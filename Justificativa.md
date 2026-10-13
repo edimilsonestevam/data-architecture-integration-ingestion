@@ -90,23 +90,26 @@ Armazenamento de metadados de comprovantes e documentos KYC (Conheça o Seu Clie
 
 **Uso**
 
-* Eventos de transações
-* Notificações
-* Integração entre sistemas
+* Publicação de eventos de transações financeiras
+* Integração entre sistemas e microsserviços
+* Comunicação assíncrona entre aplicações
+* Distribuição de eventos para notificações e monitoramento
 
 **Justificativa**
 
-Uma Fintech gera milhares de eventos por segundo
+Uma Fintech pode gerar um grande volume de eventos por segundo, exigindo uma plataforma capaz de prrocessar, armazenar temporariamente e distribuir esses eventos de forma escalável e confiável. O Apache Kafka permite integrar sistemas por meio de uma arquitetura orientada a eventos, reduzindo o acoplamento entre os componentes.
 
 **Vantagens**
 
-* Alta escalabilidade
-* Processamento em tempo real
-* Arquitetura orientada a eventos
+* Alta escalabilidade: permite distribuir o processamento entre múltiplos servidores
+* Processamento de eventos em tempo real: possibilita o consumo contínuo de eventos com baixa latência
+* Arquitetura orientada a eventos: facilita a integração assíncrona entre sistemas
+* Durabilidade: permite armazenar eventos por um período configurável, conforme a política de retenção
+* Múltiplos consumidores: permite que diferentes sistemas processem os mesmos eventos de forma indepenente
 
 **Case**
 
-Cada pagamento realizado gera um evento enviado para múltiplos consumidores
+Cada pagamento confirmado gera um evento, como PagamentoConfirmado, que é publicado no Kafka e consumido por diferentes sistemas, como notificações ao cliente, atualização de indicadores financeiros e análise de fraudes.
 
 ---
 
