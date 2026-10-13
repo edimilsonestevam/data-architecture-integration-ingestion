@@ -58,7 +58,30 @@ Consulta de saldo e perfil do cliente
 
 ---
 
-MongoDB - Dados Não Relacionais
+**3. MongoDB - Dados Não Relacionais**
+
+**Uso**
+
+* Cadastro de documentos
+* Logs de aplicações
+
+* Histórico de navegação
+* Perfis flexíveis
+
+**Justificativa**
+
+Todos os dados não possuem estrutura fixa
+
+**Vantagens**
+
+* Schema flexível
+
+* Escalabilidade horizontal
+* Fácil evolução dos modelos
+
+**Case**
+
+Armazenamento de comprovantes e documentos KYC (Conheça o Seu Cliente)
 
 ---
 
