@@ -111,7 +111,32 @@ Cada pagamento realizado gera um evento enviado para múltiplos consumidores
 
 ---
 
-Data Lake (S3 ou Azure Data Lake)
+**5. Data Lake (S3 ou Azure Data Lake)**
+
+**Uso**
+
+Armazenamento bruto
+
+* Logs
+* Transações
+
+* Arquivos
+* Dados históricos
+
+**Justificativa**
+
+Permite aramazenar grandes volumes de dados com baixo custo
+
+**Vantagens**
+
+* Escalabilidade praticamente ilimitada
+* Baixo custo por GB
+
+* Integração com Analytics e IA
+
+**Case**
+
+Retenção histórica de movimentações financeiras
 
 ---
 
