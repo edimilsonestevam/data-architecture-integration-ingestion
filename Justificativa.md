@@ -10,11 +10,11 @@
 
  **Uso**
 
-* Contas bancárias
-* Transferências
-* Pagamentos
-* Cadastro de clientes
-* Operações financeiras
+* Contas bancárias;
+* Transferências;
+* Pagamentos;
+* Cadastro de clientes;
+* Operações financeiras.
 
 **Justificativa**
 
@@ -22,15 +22,15 @@ Uma Fintech necessita de um banco de dados relacional que ofereça transações 
 
 **Vantagens**
 
-* Conformidade com ACID: garante a execução confiável de transações financeiras
-* Alta confiabilidade: oferece mecanismos de recuperação e proteção dos dados
-* Replicação:: suporta replicação física e lógica para diferentes necessidades de disponibilidade e integração
-* Open Source: reduz custos com licenciamento e permite personalizações
-* Desempenho: oferece recursos de indexação, otimização de consultas e processamento eficiente de transações
+* Conformidade com ACID: garante a execução confiável de transações financeiras;
+* Alta confiabilidade: oferece mecanismos de recuperação e proteção dos dados;
+* Replicação:: suporta replicação física e lógica para diferentes necessidades de disponibilidade e integração;
+* Open Source: reduz custos com licenciamento e permite personalizações;
+* Desempenho: oferece recursos de indexação, otimização de consultas e processamento eficiente de transações.
 
 **Case**
 
-Movimentação bancária, processamento de transferências  e controle de saldo das contas dos clientes
+Movimentação bancária, processamento de transferências  e controle de saldo das contas dos clientes.
 
 ---
 
