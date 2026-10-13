@@ -170,25 +170,31 @@ Processamento do histórico de transações financeiras para calcular indicadore
 
 ---
 
-**7. Data Warehouse (Snowflake)**
+**7. Data Warehouse (Snowflake) - Armazenamento Analítico Corporativo**
 
 **Uso**
 
-Ambiente analítico corporativo
+* Consolidação de dados financeiros e operacionais
+* Armazenamento de dados estrututrados para análise
+
+* Criação de indicadores de desempenho (KPIs)
+* Disponibilização de dados para ferramentas de Business Intelligence (BI)
 
 **Justificativa**
 
-Separar cargas analíticas das cargas transacionais
+Uma Fintech precisa consolidar dados provenientes de diferentes sistemas para realizar análises financeiras e apoiar a tomada de decisões. O Data Warehouse permite organizar os dados para consultas analíticas, separando essas cargas de trabalho das operações transacionais executadas no PostgreSQL.
 
 **Vantagens**
 
-* Escalabilidade independente
-* Alto desempenho para BI
-* Governança de dados
+* Escalabilidade independente: permite dimensionar os recursos computacionais e de armazenamento, conforme a demanda
+* Alto desempenho para BI: otimiza consultas analíticas sobre grandes volumes de dados
+* Governança de dados: oferece recursos para controlar acessos e gerenciar os dados
+* Integração de fontes: permite consolidar informações de diferentes sistemas em uma visão corporativa
+* Separação de cargas de trabalho: reduz a concorrência entre consultas analíticas e operações transacionais
 
 **Case**
 
-Relatórios financeiros e análises de negócio
+Consolidação de receitas, despesas, pagamentos e indicadores financeiros para gerar relatórios gerenciais, acompanhar KPIs e apoiar decisões estratégicas.
 
 ---
 
