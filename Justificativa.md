@@ -58,7 +58,7 @@ Consulta de saldo e perfil do cliente
 
 ---
 
-**3. MongoDB - Dados Não Relacionais**
+**4. MongoDB - Dados Não Relacionais**
 
 **Uso**
 
@@ -85,7 +85,7 @@ Armazenamento de comprovantes e documentos KYC (Conheça o Seu Cliente)
 
 ---
 
-**4. Apache Kafka - Streaming de Eventos**
+**5. Apache Kafka - Streaming de Eventos**
 
 **Uso**
 
