@@ -113,30 +113,32 @@ Cada pagamento confirmado gera um evento, como PagamentoConfirmado, que é publi
 
 ---
 
-**5. Data Lake (S3 ou Azure Data Lake)**
+**5. Data Lake - Armazenamento de Dados em Larga Escala (Amazon S3 ou Azure Data Lake Storage)**
 
 **Uso**
 
-Armazenamento bruto
+Armazenamento de dados brutos e históricos, incluindo:
 
-* Logs
-* Transações
-* Arquivos
-* Dados históricos
+* Logs de aplicações e sistemas
+* Eventos e transações financeiras
+* Arquivos e documentos
+* Dados estruturados, semiestruturados e não estruturados
 
 **Justificativa**
 
-Permite aramazenar grandes volumes de dados com baixo custo
+Uma Fintech precisa armazenar grandes volumes de dados históricos para auditorias, análises financeiras, monitoramento de operações e treinamento de modelos de Inteligência Artificial. O Data Lake permite centralizar esses dados em um ambiente escalável, com custos de armazenamento geralmente inferiores aos de bancos de dados transacionais.
 
 **Vantagens**
 
-* Escalabilidade praticamente ilimitada
-* Baixo custo por GB
-* Integração com Analytics e IA
+* Alta escalabilidade: permite armazenar grandes volumes de dados conforme a demanda
+* Baixo custo por GB: oferece armazenamento econômico, especialmente para dados acessados com pouca frequência
+* Flexibilidade: suporta diferentes formatos de dados, como CSV, JSON, Parquet e arquivos de texto
+* Integração com Analytics e IA: permite utilizar os dados em ferramentas de processamento analítico, Business Intelligence e Machine Learning
+* Retenção histórica: possibilita manter dados por períodos prolongados, conforme as políticas de retenção e os requisitos legais
 
 **Case**
 
-Retenção histórica de movimentações financeiras
+Armazenamento histórico de movimentações financeiras e eventos de transações para auditorias, identificação de padrões de fraude e análise do comportamento financeiro dos clientes.
 
 ---
 
