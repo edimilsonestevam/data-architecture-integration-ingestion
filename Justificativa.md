@@ -140,7 +140,30 @@ Retenção histórica de movimentações financeiras
 
 ---
 
-Apache Spark/Databricks
+**6. Apache Spark/Databricks**
+
+**Uso**
+
+* ETL (Extrair, Transformar e Carregar)
+* ELT (Extrair, Carregar e Transformar)
+
+* Processamento distribuído
+* Machine Learning
+
+**Justificativa**
+
+Necessário para processar milhões de registros rapidamente
+
+**Vantagens**
+
+* Processamento paralelo
+* Batch e Streaming
+
+* Integração com Data Lake
+
+**Case**
+
+Cálculo de indicadores financeiros e score de crédito
 
 ---
 
