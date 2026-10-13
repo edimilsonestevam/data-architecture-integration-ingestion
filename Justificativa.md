@@ -1,12 +1,12 @@
 ## Proposta de Arquitetura de Dados - QuantumFinance
 
-**1. Desenho da Solução**
+**Desenho da Solução**
 
 ![1791566993140](image/Justificativa/1791566993140.png)
 
 ---
 
-**2. PostgreSQL - Banco Transacional Principal**
+**1. PostgreSQL - Banco Transacional Principal**
 
  **Uso**
 
@@ -34,7 +34,7 @@ Movimentação bancária e controle de saldo
 
 ---
 
-**3. Redis - Cache e Baixa Latência**
+**2. Redis - Cache e Baixa Latência**
 
 **Uso**
 
@@ -58,7 +58,7 @@ Consulta de saldo e perfil do cliente
 
 ---
 
-**4. MongoDB - Dados Não Relacionais**
+**3. MongoDB - Dados Não Relacionais**
 
 **Uso**
 
@@ -85,7 +85,7 @@ Armazenamento de comprovantes e documentos KYC (Conheça o Seu Cliente)
 
 ---
 
-**5. Apache Kafka - Streaming de Eventos**
+**4. Apache Kafka - Streaming de Eventos**
 
 **Uso**
 
