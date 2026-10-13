@@ -167,7 +167,26 @@ Cálculo de indicadores financeiros e score de crédito
 
 ---
 
-Data Warehouse (Snowflake)
+**7. Data Warehouse (Snowflake)**
+
+**Uso**
+
+Ambiente analítico corporativo
+
+**Justificativa**
+
+Separar cargas analíticas das cargas transacionais
+
+**Vantagens**
+
+* Escalabilidade independente
+* Alto desempenho para BI
+
+* Governança de dados
+
+**Case**
+
+Relatórios financeiros e análises de negócio
 
 ---
 
