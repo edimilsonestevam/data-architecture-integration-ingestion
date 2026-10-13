@@ -203,32 +203,60 @@ Relatórios financeiros e análises de negócio
 
 Facilita a tomada de decisão baseada em dados
 
+**Vantagens**
+
+* Visualização interativa
+* Integração com múltiplas fontes
+
+* Atualização de dados
+* Tomada de decisão baseada em dados
+
+* Partilha de relatórios
+* Integração com ecossistema Microsoft
+
+* Reducão do trabalho manual
+
 **Case**
 
-Acompanhamento de crescimento da carteira de clientes
+Criação de um dashboard executivo para acompanhar o volume de transações, o crescimento da carteira de clientes, a taxa de inadimplência, a receita mensal e os indicadores de fraude.
 
 ---
 
 **9. Ambiente de Ciência de Dados**
 
-**Ferramentas**
-
-* Jupyter Notebook
-* Python
-
-* MLflow
-* Databricks
-
 **Uso**
 
 * Previsão de inadimplência
-* Deteccção de fraude
-
+* Deteccção de fraudes financeiras
+* Análise do comportamento dos clientes
+* Segmentação de clientes
+* Desenvolvimento e treino de modelos de Machine Learning
+* Criação de modelos preditivos para apoiar decisões de negócio
 * Recomendação de produtos financeiros
 
 **Justificativa**
 
 Fintechs dependem fortemente de modelos preditivos
+
+**Vantagens**
+
+* Análise preditiva
+* Detecção de fraudes
+
+* Automação de deciões
+* Personalização de serviços
+
+* Processamento de grandes volumes de dados
+* Experimentação e inovação
+
+* Reprodutibilidade dos modelos
+
+* Apoio à tomada de decisão
+* Escalabilidade
+
+**Case**
+
+Desenvolver um modelo de Machine Learning para detectar transações potencialmente fraudulentas, utilizando o histórico de operações e padrões de comportamento dos clientes.
 
 ---
 
