@@ -190,7 +190,22 @@ Relatórios financeiros e análises de negócio
 
 ---
 
-Power BI
+**8. Power BI**
+
+**Uso**
+
+* Dashboards executivos
+* KPIs financeiros
+
+* Monitoramento operacional
+
+**Justificativa**
+
+Facilita a tomada de decisão baseada em dados
+
+**Case**
+
+Acompanhamento de crescimento da carteira de clientes
 
 ---
 
