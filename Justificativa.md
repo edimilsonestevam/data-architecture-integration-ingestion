@@ -198,27 +198,28 @@ Consolidação de receitas, despesas, pagamentos e indicadores financeiros para 
 
 ---
 
-**8. Power BI**
+**8. Power BI - Business Intelligence e Visualização de Dados**
 
 **Uso**
 
 * Dashboards executivos
-* KPIs financeiros
+* Acompanhamento de KPIs financeiros
 * Monitoramento operacional
+* Análise de desempenho e tendências de negócio
 
 **Justificativa**
 
-Facilita a tomada de decisão baseada em dados
+Uma Fintech preccisa transformar dados financeiros e operacionais em informações claras e acessíveis para apoiar a tomada de decisões estratégicas. O Power BI permite criar relatórios interativos e dashboards que facilitam o acompanhamento dos indicadores de desempenho da organização.
 
 **Vantagens**
 
-* Visualização interativa
-* Integração com múltiplas fontes
-* Atualização de dados
-* Tomada de decisão baseada em dados
-* Partilha de relatórios
-* Integração com ecossistema Microsoft
-* Reducão do trabalho manual
+* Visualização interativa: permite explorar dados por meio de gráficos, filtros e relatórios dinâmicos
+* Integração com múltiplas fontes: conecta-se a diferentes bancos de dados, serviços em nuvem e plataformas analíticas
+* Atualização de dados: permite configurar atualizações programadas ou utilizar modos de conexão que consultam os dados na origem
+* Compartilhamento de relatórios: facilita a distribuição de informações entre equipes e gestores, conforme as permissões de acesso
+* Integração com ecossistema Microsoft: conecta-se a serviços, como Excel, Azure e Microsoft Fabric
+* Reducão do trabalho manual: automatiza a atualização e apresentação de indicadores, reduzinndo a dependência de planilhas elaboradas manualmente
+* Suporte à tomada de decisão: facilita a identificação de tendências, desvios e oportunidades de melhoria
 
 **Case**
 
