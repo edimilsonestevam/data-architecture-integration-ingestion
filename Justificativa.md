@@ -10,11 +10,11 @@
 
  **Uso**
 
-* Contas bancárias;
-* Transferências;
-* Pagamentos;
-* Cadastro de clientes;
-* Operações financeiras.
+* Contas bancárias
+* Transferências
+* Pagamentos
+* Cadastro de clientes
+* Operações financeiras
 
 **Justificativa**
 
@@ -22,11 +22,11 @@ Uma Fintech necessita de um banco de dados relacional que ofereça transações 
 
 **Vantagens**
 
-* Conformidade com ACID: garante a execução confiável de transações financeiras;
-* Alta confiabilidade: oferece mecanismos de recuperação e proteção dos dados;
-* Replicação:: suporta replicação física e lógica para diferentes necessidades de disponibilidade e integração;
-* Open Source: reduz custos com licenciamento e permite personalizações;
-* Desempenho: oferece recursos de indexação, otimização de consultas e processamento eficiente de transações.
+* Conformidade com ACID: garante a execução confiável de transações financeiras
+* Alta confiabilidade: oferece mecanismos de recuperação e proteção dos dados
+* Replicação:: suporta replicação física e lógica para diferentes necessidades de disponibilidade e integração
+* Open Source: reduz custos com licenciamento e permite personalizações
+* Desempenho: oferece recursos de indexação, otimização de consultas e processamento eficiente de transações
 
 **Case**
 
@@ -38,23 +38,25 @@ Movimentação bancária, processamento de transferências  e controle de saldo 
 
 **Uso**
 
-* Sessões de usuários
-* Tokens JWT
-* Consultas frequentes
+* Armazenamento temporário de sessões de usuários
+* Cache de dados relacionados à autenticação e autorização
+* Cache de consultas frequentes, como perfil e saldo do cliente
 
 **Justificativa**
 
-Operações bancárias exigem respostas rápidas
+Uma Fintech necessita de respostas rápidas para atender às consultas frequentes dos clientes. O Redis, por armazenar dados principalmente em memória, reduz o tempo de resposta e a carga sobre o PostgreSQL, melhorando o desempenho e a escalabilidade da aplicação.
 
 **Vantagens**
 
-* Armazenamento em memória
-* Latência inferior a 1 ms
-* Redução de carga no PostgreSQL
+* Armazenamento em memória: permite acesso rápido aos dados
+* Baixa latência: pode responder em menos de 1 ms em condições adequadas de infraestrutura e carga
+* Redução de carga no PostgreSQL: evita consultas repetitivas ao banco de dados principal
+* Expiração automática: permite definir um tempo de vida (TTL) para sessões e dados em cache
+* Escalabilidade: oferece recursos para distribuir o processamento e atender a um volume elevado de requisições
 
 **Case**
 
-Consulta de saldo e perfil do cliente
+Consulta rápida do perfil do cliente e de informações de saldo previamente armazenadas em cache, com atualização e invalidação adequadas para evitar a apresentação de valores desatualizados.
 
 ---
 
