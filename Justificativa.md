@@ -13,24 +13,24 @@
 * Contas bancárias
 * Transferências
 * Pagamentos
-* Clientes
+* Cadastro de clientes
 * Operações financeiras
 
 **Justificativa**
 
-Uma Fintech necessita de transações ACID (Atomicidade, Consistência, Isolamento e Durabilidade) para garantir consistência financeira
+Uma Fintech necessita de um banco de dados relacional que ofereça transações ACID (Atomicidade, Consistência, Isolamento e Durabilidade), garantindo a integridade e a consistência dos dados financeiros. O PostgreSQL permite execcutar operações críticas com segurança, como transferências entre contas, evitando inconsistências nos saldos.
 
 **Vantagens**
 
-* ACID completo
-* Alta confiabilidade
-* Replicação nativa
-* Open Source
-* Excelente desempenho
+* Conformidade com ACID: garante a execução confiável de transações financeiras
+* Alta confiabilidade: oferece mecanismos de recuperação e proteção dos dados
+* Replicação:: suporta replicação física e lógica para diferentes necessidades de disponibilidade e integração
+* Open Source: reduz custos com licenciamento e permite personalizações
+* Desempenho: oferece recursos de indexação, otimização de consultas e processamento eficiente de transações
 
 **Case**
 
-Movimentação bancária e controle de saldo
+Movimentação bancária, processamento de transferências  e controle de saldo das contas dos clientes
 
 ---
 
@@ -64,7 +64,6 @@ Consulta de saldo e perfil do cliente
 
 * Cadastro de documentos
 * Logs de aplicações
-
 * Histórico de navegação
 * Perfis flexíveis
 
@@ -75,7 +74,6 @@ Todos os dados não possuem estrutura fixa
 **Vantagens**
 
 * Schema flexível
-
 * Escalabilidade horizontal
 * Fácil evolução dos modelos
 
@@ -91,7 +89,6 @@ Armazenamento de comprovantes e documentos KYC (Conheça o Seu Cliente)
 
 * Eventos de transações
 * Notificações
-
 * Integração entre sistemas
 
 **Justificativa**
@@ -102,7 +99,6 @@ Uma Fintech gera milhares de eventos por segundo
 
 * Alta escalabilidade
 * Processamento em tempo real
-
 * Arquitetura orientada a eventos
 
 **Case**
@@ -119,7 +115,6 @@ Armazenamento bruto
 
 * Logs
 * Transações
-
 * Arquivos
 * Dados históricos
 
@@ -131,7 +126,6 @@ Permite aramazenar grandes volumes de dados com baixo custo
 
 * Escalabilidade praticamente ilimitada
 * Baixo custo por GB
-
 * Integração com Analytics e IA
 
 **Case**
@@ -146,7 +140,6 @@ Retenção histórica de movimentações financeiras
 
 * ETL (Extrair, Transformar e Carregar)
 * ELT (Extrair, Carregar e Transformar)
-
 * Processamento distribuído
 * Machine Learning
 
@@ -158,7 +151,6 @@ Necessário para processar milhões de registros rapidamente
 
 * Processamento paralelo
 * Batch e Streaming
-
 * Integração com Data Lake
 
 **Case**
@@ -181,7 +173,6 @@ Separar cargas analíticas das cargas transacionais
 
 * Escalabilidade independente
 * Alto desempenho para BI
-
 * Governança de dados
 
 **Case**
@@ -196,7 +187,6 @@ Relatórios financeiros e análises de negócio
 
 * Dashboards executivos
 * KPIs financeiros
-
 * Monitoramento operacional
 
 **Justificativa**
@@ -207,13 +197,10 @@ Facilita a tomada de decisão baseada em dados
 
 * Visualização interativa
 * Integração com múltiplas fontes
-
 * Atualização de dados
 * Tomada de decisão baseada em dados
-
 * Partilha de relatórios
 * Integração com ecossistema Microsoft
-
 * Reducão do trabalho manual
 
 **Case**
@@ -242,15 +229,11 @@ Fintechs dependem fortemente de modelos preditivos
 
 * Análise preditiva
 * Detecção de fraudes
-
 * Automação de deciões
 * Personalização de serviços
-
 * Processamento de grandes volumes de dados
 * Experimentação e inovação
-
 * Reprodutibilidade dos modelos
-
 * Apoio à tomada de decisão
 * Escalabilidade
 
