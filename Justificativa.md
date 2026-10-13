@@ -142,28 +142,31 @@ Armazenamento histórico de movimentações financeiras e eventos de transaçõe
 
 ---
 
-**6. Apache Spark/Databricks**
+**6. Apache Spark / Databricks - Processamento Distribuído de Dados**
 
 **Uso**
 
 * ETL (Extrair, Transformar e Carregar)
 * ELT (Extrair, Carregar e Transformar)
-* Processamento distribuído
-* Machine Learning
+* Processamento distribuído de grandes volumes de dados
+* Machine Learning e análise preditiva
+* Processamento de dados em batch e streaming
 
 **Justificativa**
 
-Necessário para processar milhões de registros rapidamente
+Uma Fintech precisa processar grandes volumes de dados para gerar indicadores financeiros, analisar transações e identificar padrões de fraude. O Apache Spark permite realizar processamento distribuído em larga escala, enquanto o Databricks oferece uma plataforma integrada para engenharia de dados, análise e Machine Learning.
 
 **Vantagens**
 
-* Processamento paralelo
-* Batch e Streaming
-* Integração com Data Lake
+* Processamento paralelo e distribuído: divide tarefas entre múltiplos recursos computacionais para acelerar o processamento
+* Batch e Streaming: permite processar dados históricos e eventos continuamente
+* Integração com Data Lakes: suporta a leitura e a transformação de dados armazenados em serviços, como Amazon S3 e Azure Data Lake Storage
+* Escalabilidade: permite ajustar os recursos computacionais, conforme o volume de dados
+* Machine Learning: oferece reccursos para preparação de dados, treinamento e execução de modelos preditivos
 
 **Case**
 
-Cálculo de indicadores financeiros e score de crédito
+Processamento do histórico de transações financeiras para calcular indicadores de desempenho, identificar padrões suspeitos e preparar dados para modelos de score de crédito.
 
 ---
 
