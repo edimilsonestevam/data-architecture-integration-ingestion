@@ -85,7 +85,29 @@ Armazenamento de comprovantes e documentos KYC (Conheça o Seu Cliente)
 
 ---
 
-Apache Kafka - Streaming de Eventos
+**4. Apache Kafka - Streaming de Eventos**
+
+**Uso**
+
+* Eventos de transações
+* Notificações
+
+* Integração entre sistemas
+
+**Justificativa**
+
+Uma Fintech gera milhares de eventos por segundo
+
+**Vantagens**
+
+* Alta escalabilidade
+* Processamento em tempo real
+
+* Arquitetura orientada a eventos
+
+**Case**
+
+Cada pagamento realizado gera um evento enviado para múltiplos consumidores
 
 ---
 
