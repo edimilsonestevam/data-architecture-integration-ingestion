@@ -18,7 +18,7 @@
 
 **Justificativa**
 
-Uma Fintech necessita de um banco de dados relacional que ofereça transações ACID (Atomicidade, Consistência, Isolamento e Durabilidade), garantindo a integridade e a consistência dos dados financeiros. O PostgreSQL permite execcutar operações críticas com segurança, como transferências entre contas, evitando inconsistências nos saldos.
+Uma Fintech necessita de um banco de dados relacional que ofereça transações ACID (Atomicidade, Consistência, Isolamento e Durabilidade), garantindo a integridade e a consistência dos dados financeiros. O PostgreSQL permite executar operações críticas com segurança, como transferências entre contas, evitando inconsistências nos saldos.
 
 **Vantagens**
 
@@ -75,7 +75,7 @@ Uma Fintech trabalha com dados de diferentes formatos e níveis de estruturaçã
 
 **Vantagens**
 
-* Schema flexível: permite aramazenar documentos com estruturas diferentes na mesma coleção, respeitando as regras de validação configuradas
+* Schema flexível: permite armazenar documentos com estruturas diferentes na mesma coleção, respeitando as regras de validação configuradas
 * Escalabilidade horizontal: oferece particionamento de dados (sharding) para distribuir grandes volumes de informações
 * Evolução dos modelos: facilita a inclusão de novos atributos sem exigir que todos os documentos existentes tenham a mesma estrutura
 * Consulta e indexação: permite pesquisar documentos por diferentes campos e criar índices para otimizar as consultas
@@ -97,7 +97,7 @@ Armazenamento de metadados de comprovantes e documentos KYC (Conheça o Seu Clie
 
 **Justificativa**
 
-Uma Fintech pode gerar um grande volume de eventos por segundo, exigindo uma plataforma capaz de prrocessar, armazenar temporariamente e distribuir esses eventos de forma escalável e confiável. O Apache Kafka permite integrar sistemas por meio de uma arquitetura orientada a eventos, reduzindo o acoplamento entre os componentes.
+Uma Fintech pode gerar um grande volume de eventos por segundo, exigindo uma plataforma capaz de processar, armazenar temporariamente e distribuir esses eventos de forma escalável e confiável. O Apache Kafka permite integrar sistemas por meio de uma arquitetura orientada a eventos, reduzindo o acoplamento entre os componentes.
 
 **Vantagens**
 
@@ -105,7 +105,7 @@ Uma Fintech pode gerar um grande volume de eventos por segundo, exigindo uma pla
 * Processamento de eventos em tempo real: possibilita o consumo contínuo de eventos com baixa latência
 * Arquitetura orientada a eventos: facilita a integração assíncrona entre sistemas
 * Durabilidade: permite armazenar eventos por um período configurável, conforme a política de retenção
-* Múltiplos consumidores: permite que diferentes sistemas processem os mesmos eventos de forma indepenente
+* Múltiplos consumidores: permite que diferentes sistemas processem os mesmos eventos de forma independente
 
 **Case**
 
@@ -162,7 +162,7 @@ Uma Fintech precisa processar grandes volumes de dados para gerar indicadores fi
 * Batch e Streaming: permite processar dados históricos e eventos continuamente
 * Integração com Data Lakes: suporta a leitura e a transformação de dados armazenados em serviços, como Amazon S3 e Azure Data Lake Storage
 * Escalabilidade: permite ajustar os recursos computacionais, conforme o volume de dados
-* Machine Learning: oferece reccursos para preparação de dados, treinamento e execução de modelos preditivos
+* Machine Learning: oferece recursos para preparação de dados, treinamento e execução de modelos preditivos
 
 **Case**
 
@@ -175,8 +175,7 @@ Processamento do histórico de transações financeiras para calcular indicadore
 **Uso**
 
 * Consolidação de dados financeiros e operacionais
-* Armazenamento de dados estrututrados para análise
-
+* Armazenamento de dados estruturados para análise
 * Criação de indicadores de desempenho (KPIs)
 * Disponibilização de dados para ferramentas de Business Intelligence (BI)
 
@@ -209,7 +208,7 @@ Consolidação de receitas, despesas, pagamentos e indicadores financeiros para 
 
 **Justificativa**
 
-Uma Fintech preccisa transformar dados financeiros e operacionais em informações claras e acessíveis para apoiar a tomada de decisões estratégicas. O Power BI permite criar relatórios interativos e dashboards que facilitam o acompanhamento dos indicadores de desempenho da organização.
+Uma Fintech precisa transformar dados financeiros e operacionais em informações claras e acessíveis para apoiar a tomada de decisões estratégicas. O Power BI permite criar relatórios interativos e dashboards que facilitam o acompanhamento dos indicadores de desempenho da organização.
 
 **Vantagens**
 
@@ -218,7 +217,7 @@ Uma Fintech preccisa transformar dados financeiros e operacionais em informaçõ
 * Atualização de dados: permite configurar atualizações programadas ou utilizar modos de conexão que consultam os dados na origem
 * Compartilhamento de relatórios: facilita a distribuição de informações entre equipes e gestores, conforme as permissões de acesso
 * Integração com ecossistema Microsoft: conecta-se a serviços, como Excel, Azure e Microsoft Fabric
-* Reducão do trabalho manual: automatiza a atualização e apresentação de indicadores, reduzinndo a dependência de planilhas elaboradas manualmente
+* Redução do trabalho manual: automatiza a atualização e apresentação de indicadores, reduzindo a dependência de planilhas elaboradas manualmente
 * Suporte à tomada de decisão: facilita a identificação de tendências, desvios e oportunidades de melhoria
 
 **Case**
@@ -247,7 +246,7 @@ As Fintechs utilizam técnicas de Ciência de Dados e Machine Learning para iden
 
 * Análise preditiva: permite estimar riscos e antecipar tendências
 * Detecção de fraudes: identifica padrões suspeitos nas transações financeiras
-* Automação de deciões: permite apoiar ou automatizar decisões com base em modelos analíticos
+* Automação de decisões: permite apoiar ou automatizar decisões com base em modelos analíticos
 * Personalização de serviços: possibilita recomendar produtos financeiros de acordo com o perfil dos clientes
 * Processamento de grandes volumes de dados: permite analisar históricos extensos para identificar padrões relevantes
 * Experimentação e inovação: facilita testar hipóteses, algoritmos e diferentes abordagens analíticas
