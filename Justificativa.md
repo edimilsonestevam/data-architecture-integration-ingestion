@@ -1,7 +1,3 @@
----
-EDIMILSON ESTEVAM DA CRUZ - RM377408
-ADELSON PETRONILHO JUNIOR - RM378514
----
 ## Proposta de Arquitetura de Dados - QuantumFinance
 
 **Desenho da Solução**
@@ -266,20 +262,28 @@ Desenvolver um modelo de Machine Learning para detectar transações potencialme
 
 **Benefícios da Arquitetura**
 
-| Requisito                             | Solução                                        |
+| Requisito                             | Solução                                          |
 | ------------------------------------- | ------------------------------------------------ |
-| Transações financeiras              | PostgreSQL                                       |
-| Baixa latência e cache               | Redis                                            |
+| Transações financeiras                | PostgreSQL                                       |
+| Baixa latência e cache                | Redis                                            |
 | Dados semiestruturados                | MongoDB                                          |
-| Streaming e distribuição de eventos | Apache Kafka                                     |
+| Streaming e distribuição de eventos   | Apache Kafka                                     |
 | Armazenamento massivo de dados        | Data Lake (Amazon S3 ou Azure Data Lake Storage) |
-| Processamento distribuído            | Apache Spark                                     |
+| Processamento distribuído             | Apache Spark                                     |
 | Analytics corporativo                 | Snowflake                                        |
 | Business Intelligence                 | Power BI                                         |
-| Ciência de Dados e Machine Learning  | Databricks e Python                              |
+| Ciência de Dados e Machine Learning   | Databricks e Python                              |
 
 ---
 
 **Conclusão**
 
 A arquitetura proposta segue o conceito de **Modern Data Platform**, separando os ambientes **OLTP (transacional)** e **OLAP (analítico)** para atender às diferentes necessidades da QuantumFinance. Essa abordagem permite construir uma infraestrutura escalável, capaz de suportar grandes volumes de transações, processar eventos em tempo real,  armazenar dados históricos e disponibilizar informações confiáveis para Business Intelligence (BI) e Ciência de Dados. Com a integração adequada entre os componentes, aliada a práticas de segurança, monitoramento e governança de dados, a arquitetura oferece uma base sólida para o crescimento sustentável da Fintech e para tomada de decisões orientada por dados.
+
+---
+
+| COLABORADORES              |                |
+| -------------------------- | -------------  |
+| Edimilson Estevam da Cruz  | RM377408       |
+| Adelson Petronilho Junior  | RM378514       |
+
