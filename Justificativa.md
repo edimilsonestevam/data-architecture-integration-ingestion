@@ -227,37 +227,37 @@ Criação de um dashboard executivo para acompanhar o volume de transações, o 
 
 ---
 
-**9. Ambiente de Ciência de Dados**
+**9. Ambiente de Ciência de Dados - Data Science e Machine Learning**
 
 **Uso**
 
 * Previsão de inadimplência
-* Deteccção de fraudes financeiras
+* Detecção de fraudes financeiras
 * Análise do comportamento dos clientes
 * Segmentação de clientes
-* Desenvolvimento e treino de modelos de Machine Learning
+* Desenvolvimento e treinamento de modelos de Machine Learning
 * Criação de modelos preditivos para apoiar decisões de negócio
-* Recomendação de produtos financeiros
+* Recomendação personalizada de produtos financeiros
 
 **Justificativa**
 
-Fintechs dependem fortemente de modelos preditivos
+As Fintechs utilizam técnicas de Ciência de Dados e Machine Learning para identificar padrões, prever riscos e apoiar decisões estratégicas. Um ambiente de Ciência de Dados permite explorar dados, desenvolver e avaliar modelos preditivos e disponibilizar soluções analíticas para os processos de negócio.
 
 **Vantagens**
 
-* Análise preditiva
-* Detecção de fraudes
-* Automação de deciões
-* Personalização de serviços
-* Processamento de grandes volumes de dados
-* Experimentação e inovação
-* Reprodutibilidade dos modelos
-* Apoio à tomada de decisão
-* Escalabilidade
+* Análise preditiva: permite estimar riscos e antecipar tendências
+* Detecção de fraudes: identifica padrões suspeitos nas transações financeiras
+* Automação de deciões: permite apoiar ou automatizar decisões com base em modelos analíticos
+* Personalização de serviços: possibilita recomendar produtos financeiros de acordo com o perfil dos clientes
+* Processamento de grandes volumes de dados: permite analisar históricos extensos para identificar padrões relevantes
+* Experimentação e inovação: facilita testar hipóteses, algoritmos e diferentes abordagens analíticas
+* Reprodutibilidade dos modelos: permite registrar dados, parâmetros, versões de código e experimentos para reproduzir resultados
+* Apoio à tomada de decisão: transforma dados em informações úteis para decisões operacionais e estratégicas
+* Escalabilidade: permite ampliar os recursos computacionais, conforme as necessidades de processamento e treinamento
 
 **Case**
 
-Desenvolver um modelo de Machine Learning para detectar transações potencialmente fraudulentas, utilizando o histórico de operações e padrões de comportamento dos clientes.
+Desenvolver um modelo de Machine Learning para detectar transações potencialmente fraudulentas, utilizando o histórico de operações e padrões de comportamento dos clientes. O modelo atribui uma pontuação de risco às transações para auxiliar os sistemas de prevenção à fraudes a decidir quando aprovar, bloquear ou  encaminhar uma operação para análise adicional.
 
 ---
 
