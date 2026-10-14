@@ -24,7 +24,7 @@ Uma Fintech necessita de um banco de dados relacional que ofereça transações 
 
 * Conformidade com ACID: garante a execução confiável de transações financeiras
 * Alta confiabilidade: oferece mecanismos de recuperação e proteção dos dados
-* Replicação:: suporta replicação física e lógica para diferentes necessidades de disponibilidade e integração
+* Replicação: suporta replicação física e lógica para diferentes necessidades de disponibilidade e integração
 * Open Source: reduz custos com licenciamento e permite personalizações
 * Desempenho: oferece recursos de indexação, otimização de consultas e processamento eficiente de transações
 
@@ -262,17 +262,17 @@ Desenvolver um modelo de Machine Learning para detectar transações potencialme
 
 **Benefícios da Arquitetura**
 
-| Requisito                             | Solução                                          |
+| Requisito                             | Solução                                        |
 | ------------------------------------- | ------------------------------------------------ |
-| Transações financeiras                | PostgreSQL                                       |
-| Baixa latência e cache                | Redis                                            |
+| Transações financeiras              | PostgreSQL                                       |
+| Baixa latência e cache               | Redis                                            |
 | Dados semiestruturados                | MongoDB                                          |
-| Streaming e distribuição de eventos   | Apache Kafka                                     |
+| Streaming e distribuição de eventos | Apache Kafka                                     |
 | Armazenamento massivo de dados        | Data Lake (Amazon S3 ou Azure Data Lake Storage) |
-| Processamento distribuído             | Apache Spark                                     |
+| Processamento distribuído            | Apache Spark                                     |
 | Analytics corporativo                 | Snowflake                                        |
 | Business Intelligence                 | Power BI                                         |
-| Ciência de Dados e Machine Learning   | Databricks e Python                              |
+| Ciência de Dados e Machine Learning  | Databricks e Python                              |
 
 ---
 
@@ -282,8 +282,7 @@ A arquitetura proposta segue o conceito de **Modern Data Platform**, separando o
 
 ---
 
-| COLABORADORES              |                |
-| -------------------------- | -------------  |
-| Edimilson Estevam da Cruz  | RM377408       |
-| Adelson Petronilho Junior  | RM378514       |
-
+| COLABORADORES             |          |
+| ------------------------- | -------- |
+| Edimilson Estevam da Cruz | RM377408 |
+| Adelson Petronilho Junior | RM378514 |
