@@ -12,3 +12,10 @@ Desenho de arquitetura de dados para atender os requisitos acima, selecionando a
 
 Pode ser desenvolvimento em qualquer ferramenta que suporte a geração de diagramas.
 Entrega em formato compatível com o Microsoft Office ou PDF (para leitura).
+
+---
+
+**Entrega 02**
+
+
+**Formato da Entrega 02**
