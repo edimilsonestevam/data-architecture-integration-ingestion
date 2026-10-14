@@ -1,3 +1,7 @@
+---
+EDIMILSON ESTEVAM DA CRUZ - RM377408
+ADELSON PETRONILHO JUNIOR - RM378514
+---
 ## Proposta de Arquitetura de Dados - QuantumFinance
 
 **Desenho da Solução**
