@@ -263,17 +263,17 @@ Desenvolver um modelo de Machine Learning para detectar transações potencialme
 
 **Benefícios da Arquitetura**
 
-| Requisito                   | Solução           |
-| --------------------------- | ------------------- |
-| Transações financeiras    | PostgreSQL          |
-| Baixa latência             | Redis               |
-| Dados não estruturados     | MongoDB             |
-| Processamento em tempo real | Kafka               |
-| Armazenamento massivo       | Data Lake           |
-| Processamento distribuído  | Spark               |
-| Analytics corporativo       | Snowflake           |
-| Business Intelligence       | Power BI            |
-| Ciência de Dados           | Databricks e Python |
+| Requisito                             | Solução                                        |
+| ------------------------------------- | ------------------------------------------------ |
+| Transações financeiras              | PostgreSQL                                       |
+| Baixa latência e cache               | Redis                                            |
+| Dados semiestruturados                | MongoDB                                          |
+| Streaming e distribuição de eventos | Apache Kafka                                     |
+| Armazenamento massivo de dados        | Data Lake (Amazon S3 ou Azure Data Lake Storage) |
+| Processamento distribuído            | Apache Spark                                     |
+| Analytics corporativo                 | Snowflake                                        |
+| Business Intelligence                 | Power BI                                         |
+| Ciência de Dados e Machine Learning  | Databricks e Python                              |
 
 ---
 
