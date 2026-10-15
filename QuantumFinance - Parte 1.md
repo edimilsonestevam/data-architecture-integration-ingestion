@@ -281,7 +281,3 @@ Desenvolver um modelo de Machine Learning para detectar transações potencialme
 A arquitetura proposta segue o conceito de **Modern Data Platform**, separando os ambientes **OLTP (transacional)** e **OLAP (analítico)** para atender às diferentes necessidades da QuantumFinance. Essa abordagem permite construir uma infraestrutura escalável, capaz de suportar grandes volumes de transações, processar eventos em tempo real,  armazenar dados históricos e disponibilizar informações confiáveis para Business Intelligence (BI) e Ciência de Dados. Com a integração adequada entre os componentes, aliada a práticas de segurança, monitoramento e governança de dados, a arquitetura oferece uma base sólida para o crescimento sustentável da Fintech e para tomada de decisões orientada por dados.
 
 ---
-
-| COLABORADOR               |          |
-| ------------------------- | -------- |
-| Edimilson Estevam da Cruz | RM377408 |
