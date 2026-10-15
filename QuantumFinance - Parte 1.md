@@ -282,6 +282,6 @@ A arquitetura proposta segue o conceito de **Modern Data Platform**, separando o
 
 ---
 
-| COLABORADORES             |          |
+| COLABORADOR               |          |
 | ------------------------- | -------- |
 | Edimilson Estevam da Cruz | RM377408 |
