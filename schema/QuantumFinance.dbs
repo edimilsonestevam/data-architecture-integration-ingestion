@@ -1015,6 +1015,24 @@
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
 		</table>
+		<table name="tb_transacoes_cliente" prior="tb_transacoes_client" >
+			<column name="id_transacoes_cliente" type="INT" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="dt_transacoes_cliente" type="DATE" mandatory="y" />
+			<column name="dt_transacoes_hora_cliente" type="TIME" mandatory="y" />
+			<column name="tp_transacoes_cliente" type="CHAR" length="3" mandatory="y" >
+				<comment><![CDATA[DOC
+TED
+PIX]]></comment>
+			</column>
+			<index name="pk_tb_transacoes_cliente" unique="PRIMARY_KEY" >
+				<column name="id_transacoes_cliente" />
+			</index>
+			<fk name="fk_tb_transacoes_cliente" to_schema="mysql" to_table="tbcliente" delete_action="cascade" update_action="cascade" >
+				<fk_column name="id_transacoes_cliente" pk="id_cliente" />
+			</fk>
+		</table>
 		<table name="tbcliente" prior="tbcli" spec="" >
 			<column name="id_cliente" type="INT" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
@@ -1051,6 +1069,8 @@ Feminino]]></comment>
 			<column name="id_ddd_telefone_movel_cliente" type="INT" mandatory="y" />
 			<column name="id_telefone_movel_cliente" type="INT" mandatory="y" />
 			<column name="ds_email_cliente" type="VARCHAR" length="50" mandatory="y" />
+			<column name="dt_cadastro_cliente" type="DATE" mandatory="y" />
+			<column name="dt_cadastro_hora_cliente" prior="dt_cadastro_hota_cliente" type="TIME" mandatory="y" />
 			<column name="ds_sistema_situacao_cliente" type="VARCHAR" length="8" >
 				<comment><![CDATA[Ativado
 Desativado]]></comment>
@@ -1342,6 +1362,7 @@ Desativado]]></comment>
 	</schema>
 	<diagram_group name="Default" id="29371a08-8fa8-4794-a5f4-8b1adfd7b370" >
 		<diagram name="QuantumFinance" id="190bf268-ea3f-46b9-b6b4-2b6f5bf0e869" show_column_type="y" show_schema_name="y" show_relation="columns" >
+			<entity schema="mysql" name="tb_transacoes_cliente" color="C1D8EE" x="703" y="95" />
 			<entity schema="mysql" name="tbcliente" color="C1D8EE" x="57" y="57" />
 		</diagram>
 	</diagram_group>
