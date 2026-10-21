@@ -17,5 +17,22 @@ Entrega em formato compatível com o Microsoft Office ou PDF (para leitura).
 
 **Entrega 02**
 
+A QuantumFinance precisa garantir que seus clientes realizem transações e adquiram ou liquidem produtos e investimentos com total integridade - de modo que o crédito seja gerado corretamente e que cada transação seja registrada com o produto, a conta e o valor certos, sem duplicidade nem inconsistência.
+
+Com time técnico, vocês decidem sustentar essa operação em um banco relacional (MySQL), aproveitando integridade referencial e transações ACID.
+
+**Tarefas**
+
+• Modelem o diagrama entidade-relacionamento;
+
+• Apliquem normalização até a 3FN;
+
+• Gerem o script DDL (CREATE TABLE);
+
+• Criem 5 mil linhas sintéticas para popular o modelo.
 
 **Formato da Entrega 02**
+
+• Cole o script DDL no Web App (correção automática);
+
+• Tragam o diagrama ER para a socialização.
