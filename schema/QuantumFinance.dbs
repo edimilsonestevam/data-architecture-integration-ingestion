@@ -1035,7 +1035,7 @@ Viúvo(a)]]></comment>
 Feminino]]></comment>
 			</column>
 			<column name="ds_profissao_cliente" type="VARCHAR" length="100" mandatory="y" />
-			<column name="vl_renda_bruta_cliente" prior="id_renda_bruta_cliente" type="DOUBLE" mandatory="y" />
+			<column name="vl_renda_bruta_cliente" prior="id_renda_bruta_cliente" type="DECIMAL" length="15" decimal="2" mandatory="y" />
 			<column name="ds_endereco_rua_cliente" prior="ds_endereco_cliente" type="VARCHAR" length="100" mandatory="y" />
 			<column name="id_endereco_numero_cliente" prior="id_endereco_andar_cliente" type="INT" mandatory="y" />
 			<column name="id_endereco_andar_cliente" prior="id_endereco_apartamento_cliente" type="INT" />
@@ -1051,8 +1051,7 @@ Feminino]]></comment>
 			<column name="id_ddd_telefone_movel_cliente" type="INT" mandatory="y" />
 			<column name="id_telefone_movel_cliente" type="INT" mandatory="y" />
 			<column name="ds_email_cliente" type="VARCHAR" length="50" mandatory="y" />
-			<column name="dt_cadastro_cliente" type="DATE" mandatory="y" />
-			<column name="dt_cadastro_hora_cliente" prior="dt_cadastro_hota_cliente" type="TIME" mandatory="y" />
+			<column name="dt_cadastro_cliente" type="DATETIME" mandatory="y" />
 			<column name="tp_segmento_cliente" type="VARCHAR" length="16" >
 				<comment><![CDATA[Particulares
 Select
@@ -1074,14 +1073,13 @@ Desativado]]></comment>
 			<column name="pk_id_transacoes_cliente" prior="id_transacoes_cliente" type="INT" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
-			<column name="dt_transacoes_cliente" type="DATE" mandatory="y" />
-			<column name="dt_transacoes_hora_cliente" type="TIME" mandatory="y" />
+			<column name="dt_transacoes_cliente" type="DATETIME" mandatory="y" />
 			<column name="tp_transacoes_cliente" type="CHAR" length="3" mandatory="y" >
 				<comment><![CDATA[DOC
 TED
 PIX]]></comment>
 			</column>
-			<column name="vl_transacoes_cliente" type="DOUBLE" mandatory="y" />
+			<column name="vl_transacoes_cliente" type="DECIMAL" length="15" decimal="2" mandatory="y" />
 			<column name="ds_transacoes_cliente" type="VARCHAR" length="100" />
 			<column name="fk_id_cliente" prior="id_cliente" type="INT" mandatory="y" />
 			<index name="pk_tb_transacoes_cliente" unique="PRIMARY_KEY" >
