@@ -20,7 +20,7 @@ CREATE  TABLE mysql.tb_cliente (
 	tp_situacao_civil_cliente VARCHAR(10)   NOT NULL,
 	tp_sexo_cliente      VARCHAR(9)   NOT NULL,
 	ds_profissao_cliente VARCHAR(100)   NOT NULL,
-	vl_renda_bruta_cliente DOUBLE   NOT NULL,
+	vl_renda_bruta_cliente DECIMAL(15,2)   NOT NULL,
 	ds_endereco_rua_cliente VARCHAR(100)   NOT NULL,
 	id_endereco_numero_cliente INT   NOT NULL,
 	id_endereco_andar_cliente INT,
@@ -36,8 +36,7 @@ CREATE  TABLE mysql.tb_cliente (
 	id_ddd_telefone_movel_cliente INT   NOT NULL,
 	id_telefone_movel_cliente INT   NOT NULL,
 	ds_email_cliente     VARCHAR(50)   NOT NULL,
-	dt_cadastro_cliente  DATE   NOT NULL,
-	dt_cadastro_hora_cliente TIME   NOT NULL,
+	dt_cadastro_cliente DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	tp_segmento_cliente  VARCHAR(16),
 	tp_sistema_situacao_cliente VARCHAR(8),
 
@@ -49,10 +48,9 @@ CREATE  TABLE mysql.tb_cliente (
 ```python
 CREATE  TABLE mysql.tb_transacoes_cliente ( 
 	pk_id_transacoes_cliente INT   NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
-	dt_transacoes_cliente DATE   NOT NULL,
-	dt_transacoes_hora_cliente TIME   NOT NULL,
+	dt_transacoes_cliente DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	tp_transacoes_cliente CHAR(3)   NOT NULL,
-	vl_transacoes_cliente DOUBLE   NOT NULL,
+	vl_transacoes_cliente DECIMAL(15,2)   NOT NULL,
 	ds_transacoes_cliente VARCHAR(100),
 	fk_id_cliente        INT   NOT NULL,
 
