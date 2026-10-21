@@ -133,7 +133,7 @@ Uma Fintech precisa armazenar grandes volumes de dados históricos para auditori
 * Alta escalabilidade: permite armazenar grandes volumes de dados conforme a demanda
 * Baixo custo por GB: oferece armazenamento econômico, especialmente para dados acessados com pouca frequência
 * Flexibilidade: suporta diferentes formatos de dados, como CSV, JSON, Parquet e arquivos de texto
-* Integração com Analytics e IA: permite utilizar os dados em ferramentas de processamento analítico, Business Intelligence e Machine Learning
+* Integração com Analytics e IA: permite utilizar os dados em ferramentas de processamento analítico, Business Intelligence e Aprendizado de MáquinaAprendizado de Máquina
 * Retenção histórica: possibilita manter dados por períodos prolongados, conforme as políticas de retenção e os requisitos legais
 
 **Case**
@@ -154,7 +154,7 @@ Armazenamento histórico de movimentações financeiras e eventos de transaçõe
 
 **Justificativa**
 
-Uma Fintech precisa processar grandes volumes de dados para gerar indicadores financeiros, analisar transações e identificar padrões de fraude. O Apache Spark permite realizar processamento distribuído em larga escala, enquanto o Databricks oferece uma plataforma integrada para engenharia de dados, análise e Machine Learning.
+Uma Fintech precisa processar grandes volumes de dados para gerar indicadores financeiros, analisar transações e identificar padrões de fraude. O Apache Spark permite realizar processamento distribuído em larga escala, enquanto o Databricks oferece uma plataforma integrada para engenharia de dados, análise e Aprendizado de Máquina.
 
 **Vantagens**
 
@@ -226,7 +226,7 @@ Criação de um dashboard executivo para acompanhar o volume de transações, o 
 
 ---
 
-**9. Ambiente de Ciência de Dados - Data Science e Machine Learning**
+**9. Ambiente de Ciência de Dados - Ciência de Dados e Aprendizado de Máquina**
 
 **Uso**
 
@@ -234,13 +234,13 @@ Criação de um dashboard executivo para acompanhar o volume de transações, o 
 * Detecção de fraudes financeiras
 * Análise do comportamento dos clientes
 * Segmentação de clientes
-* Desenvolvimento e treinamento de modelos de Machine Learning
+* Desenvolvimento e treinamento de modelos de Aprendizado de Máquina
 * Criação de modelos preditivos para apoiar decisões de negócio
 * Recomendação personalizada de produtos financeiros
 
 **Justificativa**
 
-As Fintechs utilizam técnicas de Ciência de Dados e Machine Learning para identificar padrões, prever riscos e apoiar decisões estratégicas. Um ambiente de Ciência de Dados permite explorar dados, desenvolver e avaliar modelos preditivos e disponibilizar soluções analíticas para os processos de negócio.
+As Fintechs utilizam técnicas de Ciência de Dados e Aprendizado de Máquina para identificar padrões, prever riscos e apoiar decisões estratégicas. Um ambiente de Ciência de Dados permite explorar dados, desenvolver e avaliar modelos preditivos e disponibilizar soluções analíticas para os processos de negócio.
 
 **Vantagens**
 
@@ -256,7 +256,7 @@ As Fintechs utilizam técnicas de Ciência de Dados e Machine Learning para iden
 
 **Case**
 
-Desenvolver um modelo de Machine Learning para detectar transações potencialmente fraudulentas, utilizando o histórico de operações e padrões de comportamento dos clientes. O modelo atribui uma pontuação de risco às transações para auxiliar os sistemas de prevenção à fraudes a decidir quando aprovar, bloquear ou  encaminhar uma operação para análise adicional.
+Desenvolver um modelo de Aprendizado de Máquina para detectar transações potencialmente fraudulentas, utilizando o histórico de operações e padrões de comportamento dos clientes. O modelo atribui uma pontuação de risco às transações para auxiliar os sistemas de prevenção à fraudes a decidir quando aprovar, bloquear ou  encaminhar uma operação para análise adicional.
 
 ---
 
