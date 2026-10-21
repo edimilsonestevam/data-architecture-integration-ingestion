@@ -17,7 +17,7 @@ Entrega em formato compatível com o Microsoft Office ou PDF (para leitura).
 
 **Entrega 02**
 
-A QuantumFinance precisa garantir que seus clientes realizem transações e adquiram ou liquidem produtos e investimentos com total integridade - de modo que o crédito seja gerado corretamente e que cada transação seja registrada com o produto, a conta e o valor certos, sem duplicidade nem inconsistência.
+A **QuantumFinance** precisa garantir que seus clientes realizem transações e adquiram ou liquidem produtos e investimentos com total integridade - de modo que o crédito seja gerado corretamente e que cada transação seja registrada com o produto, a conta e o valor certos, sem duplicidade nem inconsistência.
 
 Com time técnico, vocês decidem sustentar essa operação em um banco relacional (MySQL), aproveitando integridade referencial e transações ACID.
 
