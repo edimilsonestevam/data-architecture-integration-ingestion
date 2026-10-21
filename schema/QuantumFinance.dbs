@@ -1015,45 +1015,27 @@
 			</index>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
 		</table>
-		<table name="tb_transacoes_cliente" prior="tb_transacoes_client" >
-			<column name="id_transacoes_cliente" type="INT" mandatory="y" >
-				<identity><![CDATA[AUTO_INCREMENT]]></identity>
-			</column>
-			<column name="dt_transacoes_cliente" type="DATE" mandatory="y" />
-			<column name="dt_transacoes_hora_cliente" type="TIME" mandatory="y" />
-			<column name="tp_transacoes_cliente" type="CHAR" length="3" mandatory="y" >
-				<comment><![CDATA[DOC
-TED
-PIX]]></comment>
-			</column>
-			<index name="pk_tb_transacoes_cliente" unique="PRIMARY_KEY" >
-				<column name="id_transacoes_cliente" />
-			</index>
-			<fk name="fk_tb_transacoes_cliente" to_schema="mysql" to_table="tbcliente" delete_action="cascade" update_action="cascade" >
-				<fk_column name="id_transacoes_cliente" pk="id_cliente" />
-			</fk>
-		</table>
-		<table name="tbcliente" prior="tbcli" spec="" >
-			<column name="id_cliente" type="INT" mandatory="y" >
+		<table name="tb_cliente" prior="tbcliente" spec="" >
+			<column name="pk_id_cliente" prior="id_cliente" type="INT" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
 			<column name="nm_primeiro_cliente" type="VARCHAR" length="100" mandatory="y" />
 			<column name="nm_segundo_cliente" type="VARCHAR" length="100" />
 			<column name="nm_ultimo_cliente" type="VARCHAR" length="100" mandatory="y" />
 			<column name="id_idade_cliente" type="INT" mandatory="y" />
-			<column name="ds_situacao_civil_cliente" type="VARCHAR" length="10" mandatory="y" >
+			<column name="tp_situacao_civil_cliente" prior="ds_situacao_civil_cliente" type="VARCHAR" length="10" mandatory="y" >
 				<comment><![CDATA[Solteiro(a)
 Casado(a)
 Separado(a)
 Divorciado(a)
 Viúvo(a)]]></comment>
 			</column>
-			<column name="ds_sexo_cliente" type="VARCHAR" length="9" mandatory="y" >
+			<column name="tp_sexo_cliente" prior="ds_sexo_cliente" type="VARCHAR" length="9" mandatory="y" >
 				<comment><![CDATA[Masculino
 Feminino]]></comment>
 			</column>
 			<column name="ds_profissao_cliente" type="VARCHAR" length="100" mandatory="y" />
-			<column name="id_renda_bruta_cliente" prior="ds_renda_bruta_cliente" type="DOUBLE" mandatory="y" />
+			<column name="vl_renda_bruta_cliente" prior="id_renda_bruta_cliente" type="DOUBLE" mandatory="y" />
 			<column name="ds_endereco_rua_cliente" prior="ds_endereco_cliente" type="VARCHAR" length="100" mandatory="y" />
 			<column name="id_endereco_numero_cliente" prior="id_endereco_andar_cliente" type="INT" mandatory="y" />
 			<column name="id_endereco_andar_cliente" prior="id_endereco_apartamento_cliente" type="INT" />
@@ -1071,13 +1053,43 @@ Feminino]]></comment>
 			<column name="ds_email_cliente" type="VARCHAR" length="50" mandatory="y" />
 			<column name="dt_cadastro_cliente" type="DATE" mandatory="y" />
 			<column name="dt_cadastro_hora_cliente" prior="dt_cadastro_hota_cliente" type="TIME" mandatory="y" />
-			<column name="ds_sistema_situacao_cliente" type="VARCHAR" length="8" >
+			<column name="tp_segmento_cliente" type="VARCHAR" length="16" >
+				<comment><![CDATA[Particulares
+Select
+Private
+Universitarios
+Negocios
+PME
+Grandes Empresas]]></comment>
+			</column>
+			<column name="tp_sistema_situacao_cliente" prior="ds_sistema_situacao_cliente" type="VARCHAR" length="8" >
 				<comment><![CDATA[Ativado
 Desativado]]></comment>
 			</column>
-			<index name="pk_tbcliente" unique="PRIMARY_KEY" >
-				<column name="id_cliente" />
+			<index name="pk_tb_cliente" unique="PRIMARY_KEY" >
+				<column name="pk_id_cliente" />
 			</index>
+		</table>
+		<table name="tb_transacoes_cliente" prior="tb_transacoes_client" >
+			<column name="pk_id_transacoes_cliente" prior="id_transacoes_cliente" type="INT" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="dt_transacoes_cliente" type="DATE" mandatory="y" />
+			<column name="dt_transacoes_hora_cliente" type="TIME" mandatory="y" />
+			<column name="tp_transacoes_cliente" type="CHAR" length="3" mandatory="y" >
+				<comment><![CDATA[DOC
+TED
+PIX]]></comment>
+			</column>
+			<column name="vl_transacoes_cliente" type="DOUBLE" mandatory="y" />
+			<column name="ds_transacoes_cliente" type="VARCHAR" length="100" />
+			<column name="fk_id_cliente" prior="id_cliente" type="INT" mandatory="y" />
+			<index name="pk_tb_transacoes_cliente" unique="PRIMARY_KEY" >
+				<column name="pk_id_transacoes_cliente" />
+			</index>
+			<fk name="fk_tb_transacoes_cliente" to_schema="mysql" to_table="tb_cliente" delete_action="cascade" update_action="cascade" >
+				<fk_column name="pk_id_transacoes_cliente" pk="pk_id_cliente" />
+			</fk>
 		</table>
 		<table name="time_zone" type="SYSTEM_TABLE" row_count="0" spec="" >
 			<comment><![CDATA[Time zones]]></comment>
@@ -1360,10 +1372,11 @@ Desativado]]></comment>
 			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
 		</table>
 	</schema>
+	<schema name="quantumfinance" />
 	<diagram_group name="Default" id="29371a08-8fa8-4794-a5f4-8b1adfd7b370" >
 		<diagram name="QuantumFinance" id="190bf268-ea3f-46b9-b6b4-2b6f5bf0e869" show_column_type="y" show_schema_name="y" show_relation="columns" >
+			<entity schema="mysql" name="tb_cliente" color="C1D8EE" x="57" y="57" />
 			<entity schema="mysql" name="tb_transacoes_cliente" color="C1D8EE" x="703" y="95" />
-			<entity schema="mysql" name="tbcliente" color="C1D8EE" x="57" y="57" />
 		</diagram>
 	</diagram_group>
 </project>
