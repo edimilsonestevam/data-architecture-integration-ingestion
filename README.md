@@ -29,7 +29,7 @@ Com time técnico, vocês decidem sustentar essa operação em um banco relacion
 
 • Gerem o script DDL (CREATE TABLE)
 
-• Criem 5 mil linhas sintéticas para popular o modelo
+• Criem 5 mil linhas sintéticas para popular o modelo (INSERT TABLE)
 
 **Formato da Entrega 02**
 
