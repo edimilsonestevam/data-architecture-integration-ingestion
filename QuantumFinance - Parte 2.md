@@ -9,11 +9,11 @@
 **Linguagem de Definição de Dados (DDL)**
 
 1. Script de Criação de Tabela
-
+```python
        <código fonte>
-
-<script><wbr>
+```
 
 2. Script de Inclusão de Dados
-
-      <código fonte>
+```python
+       <código fonte>
+```
