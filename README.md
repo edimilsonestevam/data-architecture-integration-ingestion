@@ -23,16 +23,16 @@ Com time técnico, vocês decidem sustentar essa operação em um banco relacion
 
 **Tarefas**
 
-• Modelem o diagrama entidade-relacionamento;
+• Modelem o diagrama entidade-relacionamento
 
-• Apliquem normalização até a 3FN;
+• Apliquem normalização até a 3FN
 
-• Gerem o script DDL (CREATE TABLE);
+• Gerem o script DDL (CREATE TABLE)
 
-• Criem 5 mil linhas sintéticas para popular o modelo.
+• Criem 5 mil linhas sintéticas para popular o modelo
 
 **Formato da Entrega 02**
 
-• Cole o script DDL no Web App (correção automática);
+• Cole o script DDL no Web App (correção automática)
 
-• Tragam o diagrama ER para a socialização.
+• Tragam o diagrama ER para a socialização
