@@ -2,7 +2,7 @@
 
 **Diagrama Entidade-Relacionamento (ER)**
 
-<imagem>
+<image>
 
 ---
 
