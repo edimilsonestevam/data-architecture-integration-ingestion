@@ -1,0 +1,1348 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="MySql" database="MySql" id="49ee5f46-46d5-4355-bdc4-a355e3c1cbd0" >
+	<schema name="mysql" >
+		<table name="columns_priv" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Column privileges]]></comment>
+			<column name="Host" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="Db" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="User" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Table_name" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Column_name" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Timestamp" type="TIMESTAMP" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+				<column_options><![CDATA[ON UPDATE  CURRENT_TIMESTAMP]]></column_options>
+			</column>
+			<column name="Column_priv" type="SET" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<enumeration><![CDATA['Select','Insert','Update','References']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<index name="pk_columns_priv" unique="PRIMARY_KEY" >
+				<column name="Host" />
+				<column name="User" />
+				<column name="Db" />
+				<column name="Table_name" />
+				<column name="Column_name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="component" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Components]]></comment>
+			<column name="component_id" type="INT" mandatory="y" unsigned="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="component_group_id" type="INT" mandatory="y" unsigned="y" />
+			<column name="component_urn" type="TEXT" mandatory="y" />
+			<index name="pk_component" unique="PRIMARY_KEY" >
+				<column name="component_id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="db" type="SYSTEM_TABLE" row_count="2" spec="" >
+			<comment><![CDATA[Database privileges]]></comment>
+			<column name="Host" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="Db" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="User" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Select_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Insert_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Update_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Delete_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Create_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Drop_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Grant_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="References_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Index_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Alter_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Create_tmp_table_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Lock_tables_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Create_view_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Show_view_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Create_routine_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Alter_routine_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Execute_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Event_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Trigger_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<index name="pk_db" unique="PRIMARY_KEY" >
+				<column name="Host" />
+				<column name="User" />
+				<column name="Db" />
+			</index>
+			<index name="User" unique="NORMAL" >
+				<column name="User" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="default_roles" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Default roles]]></comment>
+			<column name="HOST" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="USER" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="DEFAULT_ROLE_HOST" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['%']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="DEFAULT_ROLE_USER" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<index name="pk_default_roles" unique="PRIMARY_KEY" >
+				<column name="HOST" />
+				<column name="USER" />
+				<column name="DEFAULT_ROLE_HOST" />
+				<column name="DEFAULT_ROLE_USER" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="engine_cost" type="SYSTEM_TABLE" row_count="2" spec="" >
+			<column name="engine_name" type="VARCHAR" length="64" mandatory="y" />
+			<column name="device_type" type="INT" mandatory="y" />
+			<column name="cost_name" type="VARCHAR" length="64" mandatory="y" />
+			<column name="cost_value" type="FLOAT" />
+			<column name="last_update" type="TIMESTAMP" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+				<column_options><![CDATA[ON UPDATE  CURRENT_TIMESTAMP]]></column_options>
+			</column>
+			<column name="comment" type="VARCHAR" length="1024" />
+			<column name="default_value" type="FLOAT" >
+				<identity><![CDATA[GENERATED  ALWAYS AS ((case `cost_name` when _utf8mb3'io_block_read_cost' then 1.0 when _utf8mb3'memory_block_read_cost' then 0.25 else NULL end))]]></identity>
+			</column>
+			<index name="pk_engine_cost" unique="PRIMARY_KEY" >
+				<column name="cost_name" />
+				<column name="engine_name" />
+				<column name="device_type" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="func" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[User defined functions]]></comment>
+			<column name="name" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="ret" type="TINYINT" mandatory="y" >
+				<defo><![CDATA['0']]></defo>
+			</column>
+			<column name="dl" type="CHAR" length="128" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="type" type="ENUM" mandatory="y" >
+				<enumeration><![CDATA['function','aggregate']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<index name="pk_func" unique="PRIMARY_KEY" >
+				<column name="name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="general_log" type="SYSTEM_TABLE" row_count="2" spec="" >
+			<comment><![CDATA[General log]]></comment>
+			<column name="event_time" type="TIMESTAMP" length="6" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP(6)]]></defo>
+				<column_options><![CDATA[ON UPDATE  CURRENT_TIMESTAMP(6)]]></column_options>
+			</column>
+			<column name="user_host" type="MEDIUMTEXT" mandatory="y" />
+			<column name="thread_id" type="BIGINT" mandatory="y" unsigned="y" />
+			<column name="server_id" type="INT" mandatory="y" unsigned="y" />
+			<column name="command_type" type="VARCHAR" length="64" mandatory="y" />
+			<column name="argument" type="MEDIUMBLOB" mandatory="y" />
+			<options><![CDATA[ENGINE=CSV DEFAULT CHARSET=utf8mb3]]></options>
+		</table>
+		<table name="global_grants" type="SYSTEM_TABLE" row_count="49" spec="" >
+			<comment><![CDATA[Extended global grants]]></comment>
+			<column name="USER" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="HOST" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="PRIV" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="WITH_GRANT_OPTION" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<index name="pk_global_grants" unique="PRIMARY_KEY" >
+				<column name="USER" />
+				<column name="HOST" />
+				<column name="PRIV" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="gtid_executed" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<column name="source_uuid" type="CHAR" length="36" mandatory="y" >
+				<comment><![CDATA[uuid of the source where the transaction was originally executed.]]></comment>
+			</column>
+			<column name="interval_start" type="BIGINT" mandatory="y" >
+				<comment><![CDATA[First number of interval.]]></comment>
+			</column>
+			<column name="interval_end" type="BIGINT" mandatory="y" >
+				<comment><![CDATA[Last number of interval.]]></comment>
+			</column>
+			<index name="pk_gtid_executed" unique="PRIMARY_KEY" >
+				<column name="source_uuid" />
+				<column name="interval_start" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="help_category" type="SYSTEM_TABLE" row_count="53" spec="" >
+			<comment><![CDATA[help categories]]></comment>
+			<column name="help_category_id" type="SMALLINT" mandatory="y" unsigned="y" />
+			<column name="name" type="CHAR" length="64" mandatory="y" />
+			<column name="parent_category_id" type="SMALLINT" unsigned="y" />
+			<column name="url" type="TEXT" mandatory="y" />
+			<index name="pk_help_category" unique="PRIMARY_KEY" >
+				<column name="help_category_id" />
+			</index>
+			<index name="name" unique="UNIQUE_KEY" >
+				<column name="name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="help_keyword" type="SYSTEM_TABLE" row_count="762" spec="" >
+			<comment><![CDATA[help keywords]]></comment>
+			<column name="help_keyword_id" type="INT" mandatory="y" unsigned="y" />
+			<column name="name" type="CHAR" length="64" mandatory="y" />
+			<index name="pk_help_keyword" unique="PRIMARY_KEY" >
+				<column name="help_keyword_id" />
+			</index>
+			<index name="name" unique="UNIQUE_KEY" >
+				<column name="name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="help_relation" type="SYSTEM_TABLE" row_count="1034" spec="" >
+			<comment><![CDATA[keyword-topic relation]]></comment>
+			<column name="help_topic_id" type="INT" mandatory="y" unsigned="y" />
+			<column name="help_keyword_id" type="INT" mandatory="y" unsigned="y" />
+			<index name="pk_help_relation" unique="PRIMARY_KEY" >
+				<column name="help_keyword_id" />
+				<column name="help_topic_id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="help_topic" type="SYSTEM_TABLE" row_count="526" spec="" >
+			<comment><![CDATA[help topics]]></comment>
+			<column name="help_topic_id" type="INT" mandatory="y" unsigned="y" />
+			<column name="name" type="CHAR" length="64" mandatory="y" />
+			<column name="help_category_id" type="SMALLINT" mandatory="y" unsigned="y" />
+			<column name="description" type="TEXT" mandatory="y" />
+			<column name="example" type="TEXT" mandatory="y" />
+			<column name="url" type="TEXT" mandatory="y" />
+			<index name="pk_help_topic" unique="PRIMARY_KEY" >
+				<column name="help_topic_id" />
+			</index>
+			<index name="name" unique="UNIQUE_KEY" >
+				<column name="name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="innodb_index_stats" type="SYSTEM_TABLE" row_count="197" spec="" >
+			<column name="database_name" type="VARCHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="table_name" type="VARCHAR" length="199" mandatory="y" >
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="index_name" type="VARCHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="last_update" type="TIMESTAMP" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+				<column_options><![CDATA[ON UPDATE  CURRENT_TIMESTAMP]]></column_options>
+			</column>
+			<column name="stat_name" type="VARCHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="stat_value" type="BIGINT" mandatory="y" unsigned="y" />
+			<column name="sample_size" type="BIGINT" unsigned="y" />
+			<column name="stat_description" type="VARCHAR" length="1024" mandatory="y" >
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<index name="pk_innodb_index_stats" unique="PRIMARY_KEY" >
+				<column name="database_name" />
+				<column name="table_name" />
+				<column name="index_name" />
+				<column name="stat_name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="innodb_table_stats" type="SYSTEM_TABLE" row_count="21" spec="" >
+			<column name="database_name" type="VARCHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="table_name" type="VARCHAR" length="199" mandatory="y" >
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="last_update" type="TIMESTAMP" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+				<column_options><![CDATA[ON UPDATE  CURRENT_TIMESTAMP]]></column_options>
+			</column>
+			<column name="n_rows" type="BIGINT" mandatory="y" unsigned="y" />
+			<column name="clustered_index_size" type="BIGINT" mandatory="y" unsigned="y" />
+			<column name="sum_of_other_index_sizes" type="BIGINT" mandatory="y" unsigned="y" />
+			<index name="pk_innodb_table_stats" unique="PRIMARY_KEY" >
+				<column name="database_name" />
+				<column name="table_name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="ndb_binlog_index" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<column name="Position" type="BIGINT" mandatory="y" unsigned="y" />
+			<column name="File" type="VARCHAR" length="255" mandatory="y" />
+			<column name="epoch" type="BIGINT" mandatory="y" unsigned="y" />
+			<column name="inserts" type="INT" mandatory="y" unsigned="y" />
+			<column name="updates" type="INT" mandatory="y" unsigned="y" />
+			<column name="deletes" type="INT" mandatory="y" unsigned="y" />
+			<column name="schemaops" type="INT" mandatory="y" unsigned="y" />
+			<column name="orig_server_id" type="INT" mandatory="y" unsigned="y" />
+			<column name="orig_epoch" type="BIGINT" mandatory="y" unsigned="y" />
+			<column name="gci" type="INT" mandatory="y" unsigned="y" />
+			<column name="next_position" type="BIGINT" mandatory="y" unsigned="y" />
+			<column name="next_file" type="VARCHAR" length="255" mandatory="y" />
+			<index name="pk_ndb_binlog_index" unique="PRIMARY_KEY" >
+				<column name="epoch" />
+				<column name="orig_server_id" />
+				<column name="orig_epoch" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=latin1 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="password_history" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Password history for user accounts]]></comment>
+			<column name="Host" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="User" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Password_timestamp" type="TIMESTAMP" length="6" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP(6)]]></defo>
+			</column>
+			<column name="Password" type="TEXT" >
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<index name="pk_password_history" unique="PRIMARY_KEY" >
+				<column name="Host" />
+				<column name="User" />
+				<column name="Password_timestamp" options=" DESC" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="plugin" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[MySQL plugins]]></comment>
+			<column name="name" type="VARCHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+			</column>
+			<column name="dl" type="VARCHAR" length="128" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+			</column>
+			<index name="pk_plugin" unique="PRIMARY_KEY" >
+				<column name="name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="procs_priv" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Procedure privileges]]></comment>
+			<column name="Host" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="Db" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="User" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Routine_name" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Routine_type" type="ENUM" mandatory="y" >
+				<enumeration><![CDATA['FUNCTION','PROCEDURE']]></enumeration>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Grantor" type="VARCHAR" length="288" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Proc_priv" type="SET" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<enumeration><![CDATA['Execute','Alter Routine','Grant']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Timestamp" type="TIMESTAMP" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+				<column_options><![CDATA[ON UPDATE  CURRENT_TIMESTAMP]]></column_options>
+			</column>
+			<index name="pk_procs_priv" unique="PRIMARY_KEY" >
+				<column name="Host" />
+				<column name="User" />
+				<column name="Db" />
+				<column name="Routine_name" />
+				<column name="Routine_type" />
+			</index>
+			<index name="Grantor" unique="NORMAL" >
+				<column name="Grantor" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="proxies_priv" type="SYSTEM_TABLE" row_count="1" spec="" >
+			<comment><![CDATA[User proxy privileges]]></comment>
+			<column name="Host" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="User" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Proxied_host" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="Proxied_user" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="With_grant" type="BOOLEAN" mandatory="y" >
+				<defo><![CDATA['0']]></defo>
+			</column>
+			<column name="Grantor" type="VARCHAR" length="288" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Timestamp" type="TIMESTAMP" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+				<column_options><![CDATA[ON UPDATE  CURRENT_TIMESTAMP]]></column_options>
+			</column>
+			<index name="pk_proxies_priv" unique="PRIMARY_KEY" >
+				<column name="Host" />
+				<column name="User" />
+				<column name="Proxied_host" />
+				<column name="Proxied_user" />
+			</index>
+			<index name="Grantor" unique="NORMAL" >
+				<column name="Grantor" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="replication_asynchronous_connection_failover" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[The source configuration details]]></comment>
+			<column name="Channel_name" type="CHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+				<comment><![CDATA[The replication channel name that connects source and replica.]]></comment>
+			</column>
+			<column name="Host" type="CHAR" length="255" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+				<comment><![CDATA[The source hostname that the replica will attempt to switch over the replication connection to in case of a failure.]]></comment>
+			</column>
+			<column name="Port" type="INT" mandatory="y" unsigned="y" >
+				<comment><![CDATA[The source port that the replica will attempt to switch over the replication connection to in case of a failure.]]></comment>
+			</column>
+			<column name="Network_namespace" type="CHAR" length="64" mandatory="y" >
+				<comment><![CDATA[The source network namespace that the replica will attempt to switch over the replication connection to in case of a failure. If its value is empty, connections use the default (global) namespace.]]></comment>
+			</column>
+			<column name="Weight" type="TINYINT" mandatory="y" unsigned="y" >
+				<comment><![CDATA[The order in which the replica shall try to switch the connection over to when there are failures. Weight can be set to a number between 1 and 100, where 100 is the highest weight and 1 the lowest.]]></comment>
+			</column>
+			<column name="Managed_name" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+				<comment><![CDATA[The name of the group which this server belongs to.]]></comment>
+			</column>
+			<index name="pk_replication_asynchronous_connection_failover" unique="PRIMARY_KEY" >
+				<column name="Channel_name" />
+				<column name="Host" />
+				<column name="Port" />
+				<column name="Network_namespace" />
+				<column name="Managed_name" />
+			</index>
+			<index name="Channel_name" unique="NORMAL" >
+				<column name="Channel_name" />
+				<column name="Managed_name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="replication_asynchronous_connection_failover_managed" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[The managed source configuration details]]></comment>
+			<column name="Channel_name" type="CHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+				<comment><![CDATA[The replication channel name that connects source and replica.]]></comment>
+			</column>
+			<column name="Managed_name" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+				<comment><![CDATA[The name of the source which needs to be managed.]]></comment>
+			</column>
+			<column name="Managed_type" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+				<comment><![CDATA[Determines the managed type.]]></comment>
+			</column>
+			<column name="Configuration" type="JSON" >
+				<comment><![CDATA[The data to help manage group. For Managed_type = GroupReplication, Configuration value should contain {"Primary_weight": 80, "Secondary_weight": 60}, so that it assigns weight=80 to PRIMARY of the group, and weight=60 for rest of the members in mysql.replication_asynchronous_connection_failover table.]]></comment>
+			</column>
+			<index name="pk_replication_asynchronous_connection_failover_ma" unique="PRIMARY_KEY" >
+				<column name="Channel_name" />
+				<column name="Managed_name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="replication_group_configuration_version" type="SYSTEM_TABLE" row_count="1" spec="" >
+			<comment><![CDATA[The group configuration version.]]></comment>
+			<column name="name" type="CHAR" length="255" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+				<comment><![CDATA[The configuration name.]]></comment>
+			</column>
+			<column name="version" type="BIGINT" mandatory="y" unsigned="y" >
+				<comment><![CDATA[The version of the configuration name.]]></comment>
+			</column>
+			<index name="pk_replication_group_configuration_version" unique="PRIMARY_KEY" >
+				<column name="name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="replication_group_member_actions" type="SYSTEM_TABLE" row_count="2" spec="" >
+			<comment><![CDATA[The member actions configuration.]]></comment>
+			<column name="name" type="CHAR" length="255" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+				<comment><![CDATA[The action name.]]></comment>
+			</column>
+			<column name="event" type="CHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+				<comment><![CDATA[The event that will trigger the action.]]></comment>
+			</column>
+			<column name="enabled" type="BOOLEAN" mandatory="y" >
+				<comment><![CDATA[Whether the action is enabled.]]></comment>
+			</column>
+			<column name="type" type="CHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+				<comment><![CDATA[The action type.]]></comment>
+			</column>
+			<column name="priority" type="TINYINT" mandatory="y" unsigned="y" >
+				<comment><![CDATA[The order on which the action will be run, value between 1 and 100, lower values first.]]></comment>
+			</column>
+			<column name="error_handling" type="CHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+				<comment><![CDATA[On errors during the action will be handled: IGNORE, CRITICAL.]]></comment>
+			</column>
+			<index name="pk_replication_group_member_actions" unique="PRIMARY_KEY" >
+				<column name="name" />
+				<column name="event" />
+			</index>
+			<index name="event" unique="NORMAL" >
+				<column name="event" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="role_edges" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Role hierarchy and role grants]]></comment>
+			<column name="FROM_HOST" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="FROM_USER" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="TO_HOST" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="TO_USER" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="WITH_ADMIN_OPTION" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<index name="pk_role_edges" unique="PRIMARY_KEY" >
+				<column name="FROM_HOST" />
+				<column name="FROM_USER" />
+				<column name="TO_HOST" />
+				<column name="TO_USER" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="server_cost" type="SYSTEM_TABLE" row_count="6" spec="" >
+			<column name="cost_name" type="VARCHAR" length="64" mandatory="y" />
+			<column name="cost_value" type="FLOAT" />
+			<column name="last_update" type="TIMESTAMP" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+				<column_options><![CDATA[ON UPDATE  CURRENT_TIMESTAMP]]></column_options>
+			</column>
+			<column name="comment" type="VARCHAR" length="1024" />
+			<column name="default_value" type="FLOAT" >
+				<identity><![CDATA[GENERATED  ALWAYS AS ((case `cost_name` when _utf8mb3'disk_temptable_create_cost' then 20.0 when _utf8mb3'disk_temptable_row_cost' then 0.5 when _utf8mb3'key_compare_cost' then 0.05 when _utf8mb3'memory_temptable_create_cost' then 1.0 when _utf8mb3'memory_temptable_row_cost' then 0.1 when _utf8mb3'row_evaluate_cost' then 0.1 else NULL end))]]></identity>
+			</column>
+			<index name="pk_server_cost" unique="PRIMARY_KEY" >
+				<column name="cost_name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="servers" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[MySQL Foreign Servers table]]></comment>
+			<column name="Server_name" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+			</column>
+			<column name="Host" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="Db" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+			</column>
+			<column name="Username" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+			</column>
+			<column name="Password" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+			</column>
+			<column name="Port" type="INT" mandatory="y" >
+				<defo><![CDATA['0']]></defo>
+			</column>
+			<column name="Socket" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+			</column>
+			<column name="Wrapper" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+			</column>
+			<column name="Owner" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+			</column>
+			<index name="pk_servers" unique="PRIMARY_KEY" >
+				<column name="Server_name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="slave_master_info" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Master Information]]></comment>
+			<column name="Number_of_lines" type="INT" mandatory="y" unsigned="y" >
+				<comment><![CDATA[Number of lines in the file.]]></comment>
+			</column>
+			<column name="Master_log_name" type="TEXT" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The name of the master binary log currently being read from the master.]]></comment>
+			</column>
+			<column name="Master_log_pos" type="BIGINT" mandatory="y" unsigned="y" >
+				<comment><![CDATA[The master log position of the last read event.]]></comment>
+			</column>
+			<column name="Host" type="VARCHAR" length="255" >
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+				<comment><![CDATA[The host name of the source.]]></comment>
+			</column>
+			<column name="User_name" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The user name used to connect to the master.]]></comment>
+			</column>
+			<column name="User_password" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The password used to connect to the master.]]></comment>
+			</column>
+			<column name="Port" type="INT" mandatory="y" unsigned="y" >
+				<comment><![CDATA[The network port used to connect to the master.]]></comment>
+			</column>
+			<column name="Connect_retry" type="INT" mandatory="y" unsigned="y" >
+				<comment><![CDATA[The period (in seconds) that the slave will wait before trying to reconnect to the master.]]></comment>
+			</column>
+			<column name="Enabled_ssl" type="BOOLEAN" mandatory="y" >
+				<comment><![CDATA[Indicates whether the server supports SSL connections.]]></comment>
+			</column>
+			<column name="Ssl_ca" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The file used for the Certificate Authority (CA) certificate.]]></comment>
+			</column>
+			<column name="Ssl_capath" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The path to the Certificate Authority (CA) certificates.]]></comment>
+			</column>
+			<column name="Ssl_cert" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The name of the SSL certificate file.]]></comment>
+			</column>
+			<column name="Ssl_cipher" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The name of the cipher in use for the SSL connection.]]></comment>
+			</column>
+			<column name="Ssl_key" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The name of the SSL key file.]]></comment>
+			</column>
+			<column name="Ssl_verify_server_cert" type="BOOLEAN" mandatory="y" >
+				<comment><![CDATA[Whether to verify the server certificate.]]></comment>
+			</column>
+			<column name="Heartbeat" type="FLOAT" mandatory="y" />
+			<column name="Bind" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[Displays which interface is employed when connecting to the MySQL server]]></comment>
+			</column>
+			<column name="Ignored_server_ids" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The number of server IDs to be ignored, followed by the actual server IDs]]></comment>
+			</column>
+			<column name="Uuid" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The master server uuid.]]></comment>
+			</column>
+			<column name="Retry_count" type="BIGINT" mandatory="y" unsigned="y" >
+				<comment><![CDATA[Number of reconnect attempts, to the master, before giving up.]]></comment>
+			</column>
+			<column name="Ssl_crl" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The file used for the Certificate Revocation List (CRL)]]></comment>
+			</column>
+			<column name="Ssl_crlpath" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The path used for Certificate Revocation List (CRL) files]]></comment>
+			</column>
+			<column name="Enabled_auto_position" type="BOOLEAN" mandatory="y" >
+				<comment><![CDATA[Indicates whether GTIDs will be used to retrieve events from the master.]]></comment>
+			</column>
+			<column name="Channel_name" type="VARCHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+				<comment><![CDATA[The channel on which the replica is connected to a source. Used in Multisource Replication]]></comment>
+			</column>
+			<column name="Tls_version" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[Tls version]]></comment>
+			</column>
+			<column name="Public_key_path" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The file containing public key of master server.]]></comment>
+			</column>
+			<column name="Get_public_key" type="BOOLEAN" mandatory="y" >
+				<comment><![CDATA[Preference to get public key from master.]]></comment>
+			</column>
+			<column name="Network_namespace" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[Network namespace used for communication with the master server.]]></comment>
+			</column>
+			<column name="Master_compression_algorithm" type="VARCHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[Compression algorithm supported for data transfer between source and replica.]]></comment>
+			</column>
+			<column name="Master_zstd_compression_level" type="INT" mandatory="y" unsigned="y" >
+				<comment><![CDATA[Compression level associated with zstd compression algorithm.]]></comment>
+			</column>
+			<column name="Tls_ciphersuites" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[Ciphersuites used for TLS 1.3 communication with the master server.]]></comment>
+			</column>
+			<column name="Source_connection_auto_failover" type="BOOLEAN" mandatory="y" >
+				<defo><![CDATA['0']]></defo>
+				<comment><![CDATA[Indicates whether the channel connection failover is enabled.]]></comment>
+			</column>
+			<column name="Gtid_only" type="BOOLEAN" mandatory="y" >
+				<defo><![CDATA['0']]></defo>
+				<comment><![CDATA[Indicates if this channel only uses GTIDs and does not persist positions.]]></comment>
+			</column>
+			<index name="pk_slave_master_info" unique="PRIMARY_KEY" >
+				<column name="Channel_name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="slave_relay_log_info" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Relay Log Information]]></comment>
+			<column name="Number_of_lines" type="INT" mandatory="y" unsigned="y" >
+				<comment><![CDATA[Number of lines in the file or rows in the table. Used to version table definitions.]]></comment>
+			</column>
+			<column name="Relay_log_name" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The name of the current relay log file.]]></comment>
+			</column>
+			<column name="Relay_log_pos" type="BIGINT" unsigned="y" >
+				<comment><![CDATA[The relay log position of the last executed event.]]></comment>
+			</column>
+			<column name="Master_log_name" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[The name of the master binary log file from which the events in the relay log file were read.]]></comment>
+			</column>
+			<column name="Master_log_pos" type="BIGINT" unsigned="y" >
+				<comment><![CDATA[The master log position of the last executed event.]]></comment>
+			</column>
+			<column name="Sql_delay" type="INT" >
+				<comment><![CDATA[The number of seconds that the slave must lag behind the master.]]></comment>
+			</column>
+			<column name="Number_of_workers" type="INT" unsigned="y" />
+			<column name="Id" type="INT" unsigned="y" >
+				<comment><![CDATA[Internal Id that uniquely identifies this record.]]></comment>
+			</column>
+			<column name="Channel_name" type="VARCHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+				<comment><![CDATA[The channel on which the replica is connected to a source. Used in Multisource Replication]]></comment>
+			</column>
+			<column name="Privilege_checks_username" type="VARCHAR" length="32" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[Username part of PRIVILEGE_CHECKS_USER.]]></comment>
+			</column>
+			<column name="Privilege_checks_hostname" type="VARCHAR" length="255" >
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+				<comment><![CDATA[Hostname part of PRIVILEGE_CHECKS_USER.]]></comment>
+			</column>
+			<column name="Require_row_format" type="BOOLEAN" mandatory="y" >
+				<comment><![CDATA[Indicates whether the channel shall only accept row based events.]]></comment>
+			</column>
+			<column name="Require_table_primary_key_check" type="ENUM" mandatory="y" >
+				<defo><![CDATA['STREAM']]></defo>
+				<enumeration><![CDATA['STREAM','ON','OFF','GENERATE']]></enumeration>
+				<comment><![CDATA[Indicates what is the channel policy regarding tables without primary keys on create and alter table queries]]></comment>
+			</column>
+			<column name="Assign_gtids_to_anonymous_transactions_type" type="ENUM" mandatory="y" >
+				<defo><![CDATA['OFF']]></defo>
+				<enumeration><![CDATA['OFF','LOCAL','UUID']]></enumeration>
+				<comment><![CDATA[Indicates whether the channel will generate a new GTID for anonymous transactions. OFF means that anonymous transactions will remain anonymous. LOCAL means that anonymous transactions will be assigned a newly generated GTID based on server_uuid. UUID indicates that anonymous transactions will be assigned a newly generated GTID based on Assign_gtids_to_anonymous_transactions_value]]></comment>
+			</column>
+			<column name="Assign_gtids_to_anonymous_transactions_value" type="TEXT" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+				<comment><![CDATA[Indicates the UUID used while generating GTIDs for anonymous transactions]]></comment>
+			</column>
+			<index name="pk_slave_relay_log_info" unique="PRIMARY_KEY" >
+				<column name="Channel_name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="slave_worker_info" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Worker Information]]></comment>
+			<column name="Id" type="INT" mandatory="y" unsigned="y" />
+			<column name="Relay_log_name" type="TEXT" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Relay_log_pos" type="BIGINT" mandatory="y" unsigned="y" />
+			<column name="Master_log_name" type="TEXT" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Master_log_pos" type="BIGINT" mandatory="y" unsigned="y" />
+			<column name="Checkpoint_relay_log_name" type="TEXT" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Checkpoint_relay_log_pos" type="BIGINT" mandatory="y" unsigned="y" />
+			<column name="Checkpoint_master_log_name" type="TEXT" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Checkpoint_master_log_pos" type="BIGINT" mandatory="y" unsigned="y" />
+			<column name="Checkpoint_seqno" type="INT" mandatory="y" unsigned="y" />
+			<column name="Checkpoint_group_size" type="INT" mandatory="y" unsigned="y" />
+			<column name="Checkpoint_group_bitmap" type="BLOB" mandatory="y" />
+			<column name="Channel_name" type="VARCHAR" length="64" mandatory="y" >
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+				<comment><![CDATA[The channel on which the replica is connected to a source. Used in Multisource Replication]]></comment>
+			</column>
+			<index name="pk_slave_worker_info" unique="PRIMARY_KEY" >
+				<column name="Channel_name" />
+				<column name="Id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="slow_log" type="SYSTEM_TABLE" row_count="2" spec="" >
+			<comment><![CDATA[Slow log]]></comment>
+			<column name="start_time" type="TIMESTAMP" length="6" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP(6)]]></defo>
+				<column_options><![CDATA[ON UPDATE  CURRENT_TIMESTAMP(6)]]></column_options>
+			</column>
+			<column name="user_host" type="MEDIUMTEXT" mandatory="y" />
+			<column name="query_time" type="TIME" length="6" mandatory="y" />
+			<column name="lock_time" type="TIME" length="6" mandatory="y" />
+			<column name="rows_sent" type="INT" mandatory="y" />
+			<column name="rows_examined" type="INT" mandatory="y" />
+			<column name="db" type="VARCHAR" length="512" mandatory="y" />
+			<column name="last_insert_id" type="INT" mandatory="y" />
+			<column name="insert_id" type="INT" mandatory="y" />
+			<column name="server_id" type="INT" mandatory="y" unsigned="y" />
+			<column name="sql_text" type="MEDIUMBLOB" mandatory="y" />
+			<column name="thread_id" type="BIGINT" mandatory="y" unsigned="y" />
+			<options><![CDATA[ENGINE=CSV DEFAULT CHARSET=utf8mb3]]></options>
+		</table>
+		<table name="tables_priv" type="SYSTEM_TABLE" row_count="2" spec="" >
+			<comment><![CDATA[Table privileges]]></comment>
+			<column name="Host" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="Db" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="User" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Table_name" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Grantor" type="VARCHAR" length="288" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Timestamp" type="TIMESTAMP" mandatory="y" >
+				<defo><![CDATA[CURRENT_TIMESTAMP]]></defo>
+				<column_options><![CDATA[ON UPDATE  CURRENT_TIMESTAMP]]></column_options>
+			</column>
+			<column name="Table_priv" type="SET" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<enumeration><![CDATA['Select','Insert','Update','Delete','Create','Drop','Grant','References','Index','Alter','Create View','Show view','Trigger']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Column_priv" type="SET" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<enumeration><![CDATA['Select','Insert','Update','References']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<index name="pk_tables_priv" unique="PRIMARY_KEY" >
+				<column name="Host" />
+				<column name="User" />
+				<column name="Db" />
+				<column name="Table_name" />
+			</index>
+			<index name="Grantor" unique="NORMAL" >
+				<column name="Grantor" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="tbcliente" prior="tbcli" spec="" >
+			<column name="id_cliente" type="INT" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="nm_primeiro_cliente" type="VARCHAR" length="100" mandatory="y" />
+			<column name="nm_segundo_cliente" type="VARCHAR" length="100" />
+			<column name="nm_ultimo_cliente" type="VARCHAR" length="100" mandatory="y" />
+			<column name="id_idade_cliente" type="INT" mandatory="y" />
+			<column name="ds_situacao_civil_cliente" type="VARCHAR" length="10" mandatory="y" >
+				<comment><![CDATA[Solteiro(a)
+Casado(a)
+Separado(a)
+Divorciado(a)
+Viúvo(a)]]></comment>
+			</column>
+			<column name="ds_sexo_cliente" type="VARCHAR" length="9" mandatory="y" >
+				<comment><![CDATA[Masculino
+Feminino]]></comment>
+			</column>
+			<column name="ds_profissao_cliente" type="VARCHAR" length="100" mandatory="y" />
+			<column name="id_renda_bruta_cliente" prior="ds_renda_bruta_cliente" type="DOUBLE" mandatory="y" />
+			<column name="ds_endereco_rua_cliente" prior="ds_endereco_cliente" type="VARCHAR" length="100" mandatory="y" />
+			<column name="id_endereco_numero_cliente" prior="id_endereco_andar_cliente" type="INT" mandatory="y" />
+			<column name="id_endereco_andar_cliente" prior="id_endereco_apartamento_cliente" type="INT" />
+			<column name="id_endereco_cep_cliente" type="INT" mandatory="y" />
+			<column name="ds_endereco_bairro_cliente" type="VARCHAR" length="100" mandatory="y" />
+			<column name="ds_endereco_cidade_cliente" type="VARCHAR" length="100" mandatory="y" />
+			<column name="ds_endereco_estado_cliente" type="VARCHAR" length="100" mandatory="y" />
+			<column name="ds_endereco_pais_cliente" type="VARCHAR" length="100" mandatory="y" />
+			<column name="id_ddi_telefone_fixo_cliente" prior="id_ddd_cliente" type="INT" />
+			<column name="id_ddd_telefone_fixo_cliente" prior="id_telefone_fixo_cliente" type="INT" />
+			<column name="id_telefone_fixo_cliente" type="INT" />
+			<column name="id_ddi_telefone_movel_cliente" type="INT" mandatory="y" />
+			<column name="id_ddd_telefone_movel_cliente" type="INT" mandatory="y" />
+			<column name="id_telefone_movel_cliente" type="INT" mandatory="y" />
+			<column name="ds_email_cliente" type="VARCHAR" length="50" mandatory="y" />
+			<column name="ds_sistema_situacao_cliente" type="VARCHAR" length="8" >
+				<comment><![CDATA[Ativado
+Desativado]]></comment>
+			</column>
+			<index name="pk_tbcliente" unique="PRIMARY_KEY" >
+				<column name="id_cliente" />
+			</index>
+		</table>
+		<table name="time_zone" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Time zones]]></comment>
+			<column name="Time_zone_id" type="INT" mandatory="y" unsigned="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="Use_leap_seconds" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['Y','N']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<index name="pk_time_zone" unique="PRIMARY_KEY" >
+				<column name="Time_zone_id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="time_zone_leap_second" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Leap seconds information for time zones]]></comment>
+			<column name="Transition_time" type="BIGINT" mandatory="y" />
+			<column name="Correction" type="INT" mandatory="y" />
+			<index name="pk_time_zone_leap_second" unique="PRIMARY_KEY" >
+				<column name="Transition_time" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="time_zone_name" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Time zone names]]></comment>
+			<column name="Name" type="CHAR" length="64" mandatory="y" />
+			<column name="Time_zone_id" type="INT" mandatory="y" unsigned="y" />
+			<index name="pk_time_zone_name" unique="PRIMARY_KEY" >
+				<column name="Name" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="time_zone_transition" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Time zone transitions]]></comment>
+			<column name="Time_zone_id" type="INT" mandatory="y" unsigned="y" />
+			<column name="Transition_time" type="BIGINT" mandatory="y" />
+			<column name="Transition_type_id" type="INT" mandatory="y" unsigned="y" />
+			<index name="pk_time_zone_transition" unique="PRIMARY_KEY" >
+				<column name="Time_zone_id" />
+				<column name="Transition_time" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="time_zone_transition_type" type="SYSTEM_TABLE" row_count="0" spec="" >
+			<comment><![CDATA[Time zone transition types]]></comment>
+			<column name="Time_zone_id" type="INT" mandatory="y" unsigned="y" />
+			<column name="Transition_type_id" type="INT" mandatory="y" unsigned="y" />
+			<column name="Offset" type="INT" mandatory="y" >
+				<defo><![CDATA['0']]></defo>
+			</column>
+			<column name="Is_DST" type="TINYINT" mandatory="y" unsigned="y" >
+				<defo><![CDATA['0']]></defo>
+			</column>
+			<column name="Abbreviation" type="CHAR" length="8" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+			</column>
+			<index name="pk_time_zone_transition_type" unique="PRIMARY_KEY" >
+				<column name="Time_zone_id" />
+				<column name="Transition_type_id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+		<table name="user" type="SYSTEM_TABLE" row_count="4" spec="" >
+			<comment><![CDATA[Users and global privileges]]></comment>
+			<column name="Host" type="CHAR" length="255" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[CHARACTER SET ascii COLLATE ascii_general_ci]]></column_options>
+			</column>
+			<column name="User" type="CHAR" length="32" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="Select_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Insert_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Update_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Delete_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Create_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Drop_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Reload_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Shutdown_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Process_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="File_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Grant_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="References_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Index_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Alter_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Show_db_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Super_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Create_tmp_table_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Lock_tables_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Execute_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Repl_slave_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Repl_client_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Create_view_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Show_view_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Create_routine_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Alter_routine_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Create_user_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Event_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Trigger_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Create_tablespace_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="ssl_type" type="ENUM" mandatory="y" >
+				<defo><![CDATA['']]></defo>
+				<enumeration><![CDATA['','ANY','X509','SPECIFIED']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="ssl_cipher" type="BLOB" mandatory="y" />
+			<column name="x509_issuer" type="BLOB" mandatory="y" />
+			<column name="x509_subject" type="BLOB" mandatory="y" />
+			<column name="max_questions" type="INT" mandatory="y" unsigned="y" >
+				<defo><![CDATA['0']]></defo>
+			</column>
+			<column name="max_updates" type="INT" mandatory="y" unsigned="y" >
+				<defo><![CDATA['0']]></defo>
+			</column>
+			<column name="max_connections" type="INT" mandatory="y" unsigned="y" >
+				<defo><![CDATA['0']]></defo>
+			</column>
+			<column name="max_user_connections" type="INT" mandatory="y" unsigned="y" >
+				<defo><![CDATA['0']]></defo>
+			</column>
+			<column name="plugin" type="CHAR" length="64" mandatory="y" >
+				<defo><![CDATA['caching_sha2_password']]></defo>
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="authentication_string" type="TEXT" >
+				<column_options><![CDATA[COLLATE utf8mb3_bin]]></column_options>
+			</column>
+			<column name="password_expired" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="password_last_changed" type="TIMESTAMP" />
+			<column name="password_lifetime" type="SMALLINT" unsigned="y" />
+			<column name="account_locked" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Create_role_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Drop_role_priv" type="ENUM" mandatory="y" >
+				<defo><![CDATA['N']]></defo>
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="Password_reuse_history" type="SMALLINT" unsigned="y" />
+			<column name="Password_reuse_time" type="SMALLINT" unsigned="y" />
+			<column name="Password_require_current" type="ENUM" >
+				<enumeration><![CDATA['N','Y']]></enumeration>
+				<column_options><![CDATA[CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci]]></column_options>
+			</column>
+			<column name="User_attributes" type="JSON" />
+			<index name="pk_user" unique="PRIMARY_KEY" >
+				<column name="Host" />
+				<column name="User" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin STATS_PERSISTENT=0 ROW_FORMAT=DYNAMIC]]></options>
+		</table>
+	</schema>
+	<diagram_group name="Default" id="29371a08-8fa8-4794-a5f4-8b1adfd7b370" >
+		<diagram name="QuantumFinance" id="190bf268-ea3f-46b9-b6b4-2b6f5bf0e869" show_column_type="y" show_schema_name="y" show_relation="columns" >
+			<entity schema="mysql" name="tbcliente" color="C1D8EE" x="57" y="57" />
+		</diagram>
+	</diagram_group>
+</project>
