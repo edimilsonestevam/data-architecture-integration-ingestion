@@ -37,8 +37,8 @@ CREATE  TABLE mysql.tb_cliente (
 	id_telefone_movel_cliente INT   NOT NULL,
 	ds_email_cliente     VARCHAR(50)   NOT NULL,
 	dt_cadastro_cliente DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	tp_segmento_cliente  VARCHAR(16),
-	tp_sistema_situacao_cliente VARCHAR(8),
+	tp_segmento_cliente  VARCHAR(16) NOT NULL,
+	tp_sistema_situacao_cliente VARCHAR(8) NOT NULL,
 
 	CONSTRAINT pk_id_cliente PRIMARY KEY (pk_id_cliente)
  );
