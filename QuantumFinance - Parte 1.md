@@ -133,7 +133,7 @@ Uma Fintech precisa armazenar grandes volumes de dados históricos para auditori
 * Alta escalabilidade: permite armazenar grandes volumes de dados conforme a demanda
 * Baixo custo por GB: oferece armazenamento econômico, especialmente para dados acessados com pouca frequência
 * Flexibilidade: suporta diferentes formatos de dados, como CSV, JSON, Parquet e arquivos de texto
-* Integração com Analytics e IA: permite utilizar os dados em ferramentas de processamento analítico, Business Intelligence e Aprendizado de MáquinaAprendizado de Máquina
+* Integração com Analytics e IA: permite utilizar os dados em ferramentas de processamento analítico, Business Intelligence e Aprendizado de Máquina
 * Retenção histórica: possibilita manter dados por períodos prolongados, conforme as políticas de retenção e os requisitos legais
 
 **Case**
