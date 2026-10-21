@@ -149,7 +149,7 @@ Armazenamento histórico de movimentações financeiras e eventos de transaçõe
 * ETL (Extrair, Transformar e Carregar)
 * ELT (Extrair, Carregar e Transformar)
 * Processamento distribuído de grandes volumes de dados
-* Machine Learning e análise preditiva
+* Aprendizado de Máquina e análise preditiva
 * Processamento de dados em batch e streaming
 
 **Justificativa**
@@ -162,7 +162,7 @@ Uma Fintech precisa processar grandes volumes de dados para gerar indicadores fi
 * Batch e Streaming: permite processar dados históricos e eventos continuamente
 * Integração com Data Lakes: suporta a leitura e a transformação de dados armazenados em serviços, como Amazon S3 e Azure Data Lake Storage
 * Escalabilidade: permite ajustar os recursos computacionais, conforme o volume de dados
-* Machine Learning: oferece recursos para preparação de dados, treinamento e execução de modelos preditivos
+* Aprendizado de Máquina: oferece recursos para preparação de dados, treinamento e execução de modelos preditivos
 
 **Case**
 
@@ -262,17 +262,17 @@ Desenvolver um modelo de Machine Learning para detectar transações potencialme
 
 **Benefícios da Arquitetura**
 
-| Requisito                             | Solução                                        |
-| ------------------------------------- | ------------------------------------------------ |
-| Transações financeiras              | PostgreSQL                                       |
-| Baixa latência e cache               | Redis                                            |
-| Dados semiestruturados                | MongoDB                                          |
-| Streaming e distribuição de eventos | Apache Kafka                                     |
-| Armazenamento massivo de dados        | Data Lake (Amazon S3 ou Azure Data Lake Storage) |
-| Processamento distribuído            | Apache Spark                                     |
-| Analytics corporativo                 | Snowflake                                        |
-| Business Intelligence                 | Power BI                                         |
-| Ciência de Dados e Machine Learning  | Databricks e Python                              |
+| Requisito                                    | Solução                                        |
+| -------------------------------------------- | ------------------------------------------------ |
+| Transações financeiras                     | PostgreSQL                                       |
+| Baixa latência e cache                      | Redis                                            |
+| Dados semiestruturados                       | MongoDB                                          |
+| Streaming e distribuição de eventos        | Apache Kafka                                     |
+| Armazenamento massivo de dados               | Data Lake (Amazon S3 ou Azure Data Lake Storage) |
+| Processamento distribuído                   | Apache Spark                                     |
+| Analytics corporativo                        | Snowflake                                        |
+| Business Intelligence                        | Power BI                                         |
+| Ciência de Dados e Aprendizado de Máquina | Databricks e Python                              |
 
 ---
 
