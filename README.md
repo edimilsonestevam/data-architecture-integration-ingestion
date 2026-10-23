@@ -23,7 +23,7 @@ Com time técnico, vocês decidem sustentar essa operação em um banco relacion
 
 **Tarefas**
 
-• Modelem o diagrama entidade-relacionamento
+• Modelem o diagrama entidade relacionamento
 
 • Apliquem normalização até a 3FN
 
