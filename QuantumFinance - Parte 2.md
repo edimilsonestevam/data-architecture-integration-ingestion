@@ -381,6 +381,7 @@ CREATE TABLE tb_transacao(
 
 
 
+
 ```python
 CREATE  TABLE tb_cliente ( 
 	id_cliente INT NOT NULL AUTO_INCREMENT,
