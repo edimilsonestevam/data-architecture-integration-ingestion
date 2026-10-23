@@ -28,7 +28,7 @@ CREATE  TABLE tb_cliente (
 	cd_ddi_telefone_movel_cliente VARCHAR(4) NOT NULL,
 	cd_ddd_telefone_movel_cliente VARCHAR(3) NOT NULL,
 	cd_telefone_movel_cliente VARCHAR(15) NOT NULL,
-	ds_email_cliente VARCHAR(254) NOT NULL,
+	ds_email_cliente VARCHAR(50) NOT NULL,
 	dt_registro_cliente DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	ds_segmento_cliente  VARCHAR(30) NOT NULL,
 	ds_situacao_cliente VARCHAR(7) NOT NULL,
@@ -37,13 +37,13 @@ CREATE  TABLE tb_cliente (
 		ds_endereco_cep_cliente REGEXP '^[0-9]{8}$'
 	),
 	CONSTRAINT chk_ddi_fixo_numero CHECK (
-		cd_ddi_telefone_fixo_cliente REGEXP '^[0-9]{1,4}$'
+		cd_ddi_telefone_fixo_cliente IS NULL OR cd_ddi_telefone_fixo_cliente REGEXP '^[0-9]{1,4}$'
 	),
 	CONSTRAINT chk_ddd_fixo_numero CHECK (
-		cd_ddd_telefone_fixo_cliente REGEXP '^[0-9]{1,3}$'
+		cd_ddd_telefone_fixo_cliente IS NULL OR cd_ddd_telefone_fixo_cliente REGEXP '^[0-9]{1,3}$'
 	),
 	CONSTRAINT chk_telefone_fixo_numero CHECK (
-		cd_telefone_fixo_cliente REGEXP '^[0-9]{1,15}$'
+		cd_telefone_fixo_cliente IS NULL OR cd_telefone_fixo_cliente REGEXP '^[0-9]{1,15}$'
 	),
 	
 	CONSTRAINT chk_ddi_movel_numero CHECK (
