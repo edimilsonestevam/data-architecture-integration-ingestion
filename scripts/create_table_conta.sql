@@ -10,3 +10,5 @@ CREATE  TABLE tb_conta (
     CONSTRAINT fk_id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id_cliente) 
     ON UPDATE CASCADE 
 );
+
+COMMIT;

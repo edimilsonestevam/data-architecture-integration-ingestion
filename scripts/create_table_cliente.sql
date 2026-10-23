@@ -30,3 +30,5 @@ CREATE  TABLE tb_cliente (
 	CONSTRAINT pk_id_cliente PRIMARY KEY (id_cliente),
 	CONSTRAINT uq_email_cliente UNIQUE (ds_email_cliente)
  );
+ 
+ COMMIT;

@@ -9,3 +9,5 @@ CREATE TABLE tb_transacao(
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 );
+
+COMMIT;

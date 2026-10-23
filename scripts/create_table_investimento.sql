@@ -10,3 +10,5 @@ CREATE TABLE tb_investimento(
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 );
+
+COMMIT;

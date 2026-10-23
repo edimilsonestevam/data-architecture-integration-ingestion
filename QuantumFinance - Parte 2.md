@@ -12,6 +12,8 @@
 
 ```python
 CREATE DATABASE db_quantum_finance;
+
+COMMIT;
 ```
 
 2. Conexão com Banco de Dados
@@ -55,6 +57,8 @@ CREATE  TABLE tb_cliente (
 	CONSTRAINT pk_id_cliente PRIMARY KEY (id_cliente),
 	CONSTRAINT uq_email_cliente UNIQUE (ds_email_cliente)
  );
+
+COMMIT;
 ```
 
 ```python
@@ -70,6 +74,8 @@ CREATE  TABLE tb_conta (
     CONSTRAINT fk_id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id_cliente) 
     ON UPDATE CASCADE 
 );
+
+COMMIT;
 ```
 
 ```python
@@ -87,6 +93,8 @@ CREATE TABLE tb_produto(
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 );
+
+COMMIT;
 ```
 
 ```python
@@ -102,6 +110,8 @@ CREATE TABLE tb_investimento(
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 );
+
+COMMIT;
 ```
 
 ```python
@@ -116,6 +126,8 @@ CREATE TABLE tb_transacao(
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 );
+
+COMMIT;
 ```
 
 4. Inclusão dos Dados
