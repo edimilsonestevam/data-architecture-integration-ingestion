@@ -44,6 +44,17 @@ CREATE  TABLE mysql.tb_cliente (
  );
 ```
 
+```python
+		<código fonte>
+```
+
+```python
+		<código fonte>
+```
+
+```python
+		<código fonte>	
+```
 
 ```python
 CREATE  TABLE mysql.tb_transacoes_cliente ( 
@@ -61,9 +72,20 @@ CREATE  TABLE mysql.tb_transacoes_cliente (
  );
 ```
 
-
 2. Script de Inclusão de Dados
 
 ```python
-       <código fonte>
+		<código fonte>
+```
+
+```python
+		<código fonte>
+```
+
+```python
+		<código fonte>
+```
+
+```python
+		<código fonte>
 ```
