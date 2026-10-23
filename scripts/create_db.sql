@@ -1,0 +1,2 @@
+CREATE DATABASE db_quantum_finance;
+USE db_quantum_finance;
