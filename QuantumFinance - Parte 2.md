@@ -27,6 +27,7 @@ USE db_quantum_finance;
 ```python
 CREATE  TABLE tb_cliente ( 
 	id_cliente INT NOT NULL AUTO_INCREMENT,
+	id_cpf_cliente VARCHAR(11) NOT NULL,
 	nm_primeiro_cliente  VARCHAR(100) NOT NULL,
 	nm_segundo_cliente VARCHAR(100),
 	nm_ultimo_cliente VARCHAR(100) NOT NULL,
@@ -54,6 +55,9 @@ CREATE  TABLE tb_cliente (
 	ds_segmento_cliente  VARCHAR(30) NOT NULL,
 	ds_situacao_cliente VARCHAR(7) NOT NULL,
 
+	CONSTRAINT chk_cpf_cliente CHECK (
+		id_cpf_cliente REGEXP '^[0-9]{11}$'
+	),
 	CONSTRAINT chk_cep_numero CHECK (
 		ds_endereco_cep_cliente REGEXP '^[0-9]{8}$'
 	),
@@ -192,6 +196,7 @@ USE db_quantum_finance;
 
 CREATE  TABLE tb_cliente ( 
 	id_cliente INT NOT NULL AUTO_INCREMENT,
+	id_cpf_cliente VARCHAR(11) NOT NULL,
 	nm_primeiro_cliente  VARCHAR(100) NOT NULL,
 	nm_segundo_cliente VARCHAR(100),
 	nm_ultimo_cliente VARCHAR(100) NOT NULL,
@@ -219,6 +224,9 @@ CREATE  TABLE tb_cliente (
 	ds_segmento_cliente  VARCHAR(30) NOT NULL,
 	ds_situacao_cliente VARCHAR(7) NOT NULL,
 
+	CONSTRAINT chk_cpf_cliente CHECK (
+		id_cpf_cliente REGEXP '^[0-9]{11}$'
+	),
 	CONSTRAINT chk_cep_numero CHECK (
 		ds_endereco_cep_cliente REGEXP '^[0-9]{8}$'
 	),
