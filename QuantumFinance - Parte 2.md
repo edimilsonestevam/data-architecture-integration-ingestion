@@ -2,7 +2,7 @@
 
 **Diagrama Entidade Relacionamento**
 
-![1792893117577](image/QuantumFinance-Parte2/1792893117577.png)
+![1792893117577](image/1792893117577.png)
 
 ---
 
