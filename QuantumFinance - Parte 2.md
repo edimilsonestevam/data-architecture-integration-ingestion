@@ -119,7 +119,7 @@ CREATE TABLE tb_produto(
     vl_taxa_produto DECIMAL(15,2) NOT NULL,
     dt_registro_produto DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   
-    CONSTRAINT chk_preco_produto CHECK(
+    CONSTRAINT chk_produto CHECK(
         vl_produto >= 0
     ),
     CONSTRAINT chk_taxa_produto CHECK(
