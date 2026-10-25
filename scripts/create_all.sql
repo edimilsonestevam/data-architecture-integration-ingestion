@@ -43,24 +43,25 @@ CREATE  TABLE tb_cliente (
 	CONSTRAINT chk_cep_numero CHECK (
 		cd_endereco_cep_cliente REGEXP '^[0-9]{8}$'
 	),
-	CONSTRAINT chk_ddi_fixo_numero CHECK (
-		cd_ddi_telefone_fixo_cliente IS NULL OR cd_ddi_telefone_fixo_cliente REGEXP '^[0-9]{1,4}$'
-	),
-	CONSTRAINT chk_ddd_fixo_numero CHECK (
-		cd_ddd_telefone_fixo_cliente IS NULL OR cd_ddd_telefone_fixo_cliente REGEXP '^[0-9]{1,3}$'
-	),
-	CONSTRAINT chk_telefone_fixo_numero CHECK (
-		cd_telefone_fixo_cliente IS NULL OR cd_telefone_fixo_cliente REGEXP '^[0-9]{1,15}$'
-	),
 	
-	CONSTRAINT chk_ddi_movel_numero CHECK (
+	CONSTRAINT chk_telefone_fixo_completo CHECK(
+		(
+		cd_ddi_telefone_fixo_cliente IS NULL
+		AND cd_ddd_telefone_fixo_cliente IS NULL
+		AND cd_telefone_fixo_cliente IS NULL
+		)
+		OR(
+		cd_ddi_telefone_fixo_cliente IS NOT NULL
+		AND cd_ddd_telefone_fixo_cliente IS NOT NULL
+		AND cd_telefone_fixo_cliente IS NOT NULL
+		)
+	),
+	CONSTRAINT chk_telefone_movel_completo CHECK(
+		(
 		cd_ddi_telefone_movel_cliente REGEXP '^[0-9]{1,4}$'
-	),
-	CONSTRAINT chk_ddd_movel_numero CHECK (
-		cd_ddd_telefone_movel_cliente REGEXP '^[0-9]{1,3}$'
-	),
-	CONSTRAINT chk_telefone_movel_numero CHECK (
-		cd_telefone_movel_cliente REGEXP '^[0-9]{1,15}$'
+		AND cd_ddd_telefone_movel_cliente REGEXP '^[0-9]{1,3}$'
+		AND cd_telefone_movel_cliente REGEXP '^[0-9]{1,15}$'
+		)
 	),
 	
 	CONSTRAINT chk_situacao_cliente CHECK (
