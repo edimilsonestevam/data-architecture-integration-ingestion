@@ -1,8 +1,8 @@
-## Proposta de Arquitetura de Dados - QuantumFinance
+## Proposta de Modelagem de Dados - QuantumFinance
 
-**Diagrama Entidade Relacionamento (ER)**
+**Diagrama Entidade Relacionamento**
 
-![ER](image/ER.png)
+![1792893117577](image/1792893117577.png)
 
 ---
 
