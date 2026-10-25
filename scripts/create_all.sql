@@ -82,7 +82,6 @@ CREATE  TABLE tb_conta (
     ),
     
     CONSTRAINT pk_id_conta PRIMARY KEY (id_conta),
-    CONSTRAINT uq_id_cliente UNIQUE (id_cliente),
     CONSTRAINT fk_id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id_cliente) 
     ON UPDATE CASCADE 
 ) ENGINE = InnoDB;
