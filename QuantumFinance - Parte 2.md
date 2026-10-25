@@ -42,10 +42,10 @@ CREATE  TABLE tb_cliente (
 	cd_ddi_telefone_movel_cliente VARCHAR(4) NOT NULL,
 	cd_ddd_telefone_movel_cliente VARCHAR(3) NOT NULL,
 	cd_telefone_movel_cliente VARCHAR(15) NOT NULL,
-	ds_email_cliente VARCHAR(50) NOT NULL,
+	ds_email_cliente VARCHAR(254) NOT NULL,
 	dt_registro_cliente DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	ds_segmento_cliente  VARCHAR(30) NOT NULL,
-	ds_situacao_cliente VARCHAR(7) NOT NULL,
+	ds_situacao_cliente VARCHAR(9) NOT NULL,
 
 	CONSTRAINT chk_cpf_cliente CHECK (
 		cd_cpf_cliente REGEXP '^[0-9]{11}$'
@@ -90,7 +90,7 @@ CREATE  TABLE tb_conta (
     ds_tipo_conta VARCHAR(20) NOT NULL,
     vl_saldo_conta DECIMAL(15,2) NOT NULL,  
     dt_registro_conta DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    ds_situacao_conta VARCHAR(7) NOT NULL,
+    ds_situacao_conta VARCHAR(9) NOT NULL,
     id_cliente INT NOT NULL,
   
     CONSTRAINT chk_saldo_conta CHECK (
@@ -102,7 +102,8 @@ CREATE  TABLE tb_conta (
     ),
   
     CONSTRAINT pk_id_conta PRIMARY KEY (id_conta),
-    CONSTRAINT fk_id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id_cliente) 
+    CONSTRAINT fk_id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id_cliente)
+    ON DELETE RESTRICT
     ON UPDATE CASCADE 
 ) ENGINE = InnoDB;
 
@@ -112,14 +113,14 @@ CREATE TABLE tb_produto(
     ds_produto VARCHAR(255),
     ds_situacao_produto VARCHAR(10) NOT NULL,
     vl_preco_produto DECIMAL(15,2) NOT NULL,
-    vl_taxa_prduto DECIMAL(15,2) NOT NULL,
+    vl_taxa_produto DECIMAL(15,2) NOT NULL,
     dt_registro_produto DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   
     CONSTRAINT chk_preco_produto CHECK(
         vl_preco_produto >= 0
     ),
-    CONSTRAINT chk_taxa_prduto CHECK(
-        vl_taxa_prduto >= 0
+    CONSTRAINT chk_taxa_produto CHECK(
+        vl_taxa_produto >= 0
     ), 
     CONSTRAINT chk_situacao_produto CHECK(
         ds_situacao_produto IN ('ATIVO', 'INATIVO', 'BLOQUEADO')
