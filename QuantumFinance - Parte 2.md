@@ -50,6 +50,9 @@ CREATE  TABLE tb_cliente (
 	CONSTRAINT chk_cpf_cliente CHECK (
 		cd_cpf_cliente REGEXP '^[0-9]{11}$'
 	),
+	CONSTRAINT chk_renda_bruta_cliente CHECK (
+		vl_renda_bruta_cliente >= 0
+	),
 	CONSTRAINT chk_cep_numero CHECK (
 		cd_endereco_cep_cliente REGEXP '^[0-9]{8}$'
 	),
@@ -71,6 +74,10 @@ CREATE  TABLE tb_cliente (
 	),
 	CONSTRAINT chk_telefone_movel_numero CHECK (
 		cd_telefone_movel_cliente REGEXP '^[0-9]{1,15}$'
+	),
+
+	CONSTRAINT chk_situacao_cliente CHECK (
+		ds_situacao_cliente IN ('ATIVO', 'INATIVO', 'BLOQUEADO')
 	),
 
 	CONSTRAINT pk_id_cliente PRIMARY KEY (id_cliente),
