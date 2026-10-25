@@ -6,10 +6,10 @@ USE db_quantum_finance;
 
 CREATE  TABLE tb_cliente ( 
 	id_cliente INT NOT NULL AUTO_INCREMENT,
-	id_cpf_cliente VARCHAR(11) NOT NULL,
+	cd_cpf_cliente VARCHAR(11) NOT NULL,
 	nm_primeiro_cliente  VARCHAR(100) NOT NULL,
 	nm_segundo_cliente VARCHAR(100),
-	nm_ultimo_cliente VARCHAR(100) NOT NULL,
+	nm_ultimo_cliente VARCHAR(100) NOT NULL,	
 	dt_nascimento_cliente DATE NOT NULL,
 	ds_situacao_civil_cliente VARCHAR(20) NOT NULL,
 	ds_sexo_cliente VARCHAR(20) NOT NULL,
@@ -18,7 +18,7 @@ CREATE  TABLE tb_cliente (
 	ds_endereco_avenida_rua_cliente VARCHAR(175) NOT NULL,
 	ds_endereco_casa_apto_numero_cliente VARCHAR(20) NOT NULL,
 	ds_endereco_apto_andar_cliente VARCHAR(20),
-	ds_endereco_cep_cliente VARCHAR(8) NOT NULL,
+	cd_endereco_cep_cliente VARCHAR(8) NOT NULL,
 	ds_endereco_bairro_cliente VARCHAR(100) NOT NULL,
 	ds_endereco_cidade_cliente VARCHAR(175) NOT NULL,
 	ds_endereco_estado_cliente VARCHAR(100) NOT NULL,
@@ -35,10 +35,10 @@ CREATE  TABLE tb_cliente (
 	ds_situacao_cliente VARCHAR(7) NOT NULL,
 
 	CONSTRAINT chk_cpf_cliente CHECK (
-		id_cpf_cliente REGEXP '^[0-9]{11}$'
+		cd_cpf_cliente REGEXP '^[0-9]{11}$'
 	),
 	CONSTRAINT chk_cep_numero CHECK (
-		ds_endereco_cep_cliente REGEXP '^[0-9]{8}$'
+		cd_endereco_cep_cliente REGEXP '^[0-9]{8}$'
 	),
 	CONSTRAINT chk_ddi_fixo_numero CHECK (
 		cd_ddi_telefone_fixo_cliente IS NULL OR cd_ddi_telefone_fixo_cliente REGEXP '^[0-9]{1,4}$'
@@ -61,9 +61,9 @@ CREATE  TABLE tb_cliente (
 	),
 	
 	CONSTRAINT pk_id_cliente PRIMARY KEY (id_cliente),
+	CONSTRAINT uq_cpf_cliente UNIQUE (cd_cpf_cliente),
 	CONSTRAINT uq_email_cliente UNIQUE (ds_email_cliente)
  ) ENGINE = InnoDB;
- 
  
 CREATE  TABLE tb_conta ( 
     id_conta INT NOT NULL AUTO_INCREMENT,
@@ -73,24 +73,18 @@ CREATE  TABLE tb_conta (
     ds_situacao_conta VARCHAR(7) NOT NULL,
     id_cliente INT NOT NULL,
     
+    CONSTRAINT chk_saldo_conta CHECK (
+        vl_saldo_conta >= 0
+    ),
+    
+    CONSTRAINT chk_situacao_conta CHECK (
+        ds_situacao_conta IN ('ATIVA', 'INATIVA', 'BLOQUEADA')
+    ),
+    
     CONSTRAINT pk_id_conta PRIMARY KEY (id_conta),
+    CONSTRAINT uq_id_cliente UNIQUE (id_cliente),
     CONSTRAINT fk_id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id_cliente) 
     ON UPDATE CASCADE 
-) ENGINE = InnoDB;
-
-CREATE TABLE tb_produto(
-    id_produto INT NOT NULL AUTO_INCREMENT,
-    nm_produto VARCHAR(100) NOT NULL,
-    ds_produto VARCHAR(255),
-    vl_preco_produto DECIMAL(15,2) NOT NULL,
-    dt_registro_produto DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    id_conta INT NOT NULL,
-    
-    CONSTRAINT pk_id_produto PRIMARY KEY (id_produto),
-    CONSTRAINT uq_nm_produto UNIQUE (nm_produto),
-    CONSTRAINT fk_id_conta FOREIGN KEY (id_conta) REFERENCES tb_conta(id_conta)
-    ON DELETE RESTRICT
-    ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
 CREATE TABLE tb_investimento(
