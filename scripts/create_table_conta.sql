@@ -6,6 +6,9 @@ CREATE  TABLE tb_conta (
     ds_situacao_conta VARCHAR(9) NOT NULL,
     id_cliente INT NOT NULL,
     
+    CONSTRAINT chk_tipo_conta CHECK(
+        ds_tipo_conta IN ('CORRENTE', 'POUPANCA', 'SALARIO', 'INVESTIMENTO')
+    ),
     CONSTRAINT chk_saldo_conta CHECK (
         vl_saldo_conta >= 0
     ),

@@ -2,7 +2,7 @@
 
 **Diagrama Entidade Relacionamento**
 
-![1792893117577](image/1792893117577.png)
+![1792897946774](image/QuantumFinance-Parte2/1792897946774.png)
 
 ---
 
@@ -93,6 +93,9 @@ CREATE  TABLE tb_conta (
     ds_situacao_conta VARCHAR(9) NOT NULL,
     id_cliente INT NOT NULL,
   
+    CONSTRAINT chk_tipo_conta CHECK(
+        ds_tipo_conta IN ('CORRENTE', 'POUPANCA', 'SALARIO', 'INVESTIMENTO')
+    ),
     CONSTRAINT chk_saldo_conta CHECK (
         vl_saldo_conta >= 0
     ),
@@ -146,24 +149,25 @@ CREATE TABLE tb_movimentacao(
         ds_situacao_movimentacao IN ('PENDENTE', 'CONCLUIDA', 'CANCELADA', 'REJEITADA')
     ),
     CONSTRAINT chk_valor_movimentacao CHECK(
-        vl_movimentacao >= 0
+        vl_movimentacao > 0
     ),
 
     CONSTRAINT pk_id_movimentacao PRIMARY KEY (id_movimentacao),
-    CONSTRAINT fk_id_conta FOREIGN KEY (id_conta) REFERENCES tb_conta(id_conta)
+    CONSTRAINT fk_id_conta_movimentacao FOREIGN KEY (id_conta) REFERENCES tb_conta(id_conta)
+    ON DELETE RESTRICT
     ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
 CREATE TABLE tb_investimento(
     id_investimento INT NOT NULL AUTO_INCREMENT,
     nm_investimento VARCHAR(100) NOT NULL,
-    vl_investimento DECIMAL(15,2) NOT NULL,
+    vl_aplicado_investimento DECIMAL(15,2) NOT NULL,
     dt_registro_investimento DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     id_produto INT NOT NULL,
     id_conta INT NOT NULL,
   
     CONSTRAINT chk_valor_investimento CHECK(
-        vl_investimento >= 0
+        vl_aplicado_investimento > 0
     ),
   
     CONSTRAINT pk_id_investimento PRIMARY KEY (id_investimento),
@@ -172,7 +176,7 @@ CREATE TABLE tb_investimento(
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
   
-    CONSTRAINT fk_id_conta FOREIGN KEY (id_conta) REFERENCES tb_conta(id_conta)
+    CONSTRAINT fk_id_conta_investimento FOREIGN KEY (id_conta) REFERENCES tb_conta(id_conta)
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 ) ENGINE = InnoDB;
@@ -193,7 +197,7 @@ CREATE TABLE tb_transacao(
         ds_situacao_transacao IN ('PENDENTE', 'CONCLUIDA', 'CANCELADA', 'REJEITADA')
     ),
     CONSTRAINT chk_valor_transacao CHECK(
-        vl_transacao >= 0
+        vl_transacao > 0
     ),
   
     CONSTRAINT pk_id_transacao PRIMARY KEY (id_transacao),

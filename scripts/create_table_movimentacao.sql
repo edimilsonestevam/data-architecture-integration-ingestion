@@ -14,7 +14,7 @@ CREATE TABLE tb_movimentacao(
         ds_situacao_movimentacao IN ('PENDENTE', 'CONCLUIDA', 'CANCELADA', 'REJEITADA')
     ),
     CONSTRAINT chk_valor_movimentacao CHECK(
-        vl_movimentacao >= 0
+        vl_movimentacao > 0
     ),
 
     CONSTRAINT pk_id_movimentacao PRIMARY KEY (id_movimentacao),

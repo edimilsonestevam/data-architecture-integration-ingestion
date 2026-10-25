@@ -5,7 +5,7 @@ CREATE TABLE tb_transacao(
     id_investimento INT NOT NULL,
         
     CONSTRAINT chk_valor_transacao CHECK(
-        vl_transacao >= 0
+        vl_transacao > 0
     ),
     
     CONSTRAINT pk_id_transacao PRIMARY KEY (id_transacao),
