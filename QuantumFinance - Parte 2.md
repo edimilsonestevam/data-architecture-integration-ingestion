@@ -146,7 +146,11 @@ COMMIT;
 2. Inclusão dos Dados nas Tabelas
 
 ```MySQL
-DROP DATABASE IF EXISTS db_quantum_finance;
+<código fonte>
 ```
 
 3. Exclusão do Banco de Dados
+
+```MySQL
+DROP DATABASE IF EXISTS db_quantum_finance;
+```
