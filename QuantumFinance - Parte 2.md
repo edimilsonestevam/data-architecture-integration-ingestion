@@ -167,9 +167,9 @@ CREATE TABLE tb_investimento(
     nm_investimento VARCHAR(100) NOT NULL,
     vl_aplicado_investimento DECIMAL(15,2) NOT NULL,
     vl_rendimento_investimento DECIMAL(15,2) NOT NULL,
+    vl_saldo_investimento DECIMAL(15,2) NOT NULL,
     dt_registro_investimento DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     dt_vencimento_investimento DATE NOT NULL,
-    vl_saldo_investimento DECIMAL(15,2) NOT NULL,
     id_produto INT NOT NULL,
     id_conta INT NOT NULL,
   
@@ -181,6 +181,9 @@ CREATE TABLE tb_investimento(
     ),
     CONSTRAINT chk_saldo_investimento CHECK(
         vl_saldo_investimento >= 0
+    ),
+    CONSTRAINT chk_vencimento_investimento CHECK(
+        dt_vencimento_investimento >= DATE(dt_registro_investimento)
     ),
   
     CONSTRAINT pk_id_investimento PRIMARY KEY (id_investimento),
