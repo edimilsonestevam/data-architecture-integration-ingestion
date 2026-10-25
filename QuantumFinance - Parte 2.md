@@ -8,7 +8,7 @@
 
 **Linguagem de Definição de Dados (DDL)**
 
-1. Criação de Banco de Dados e Tabelas
+1. Criação do Banco de Dados e Tabelas
 
 ```MySQL
 CREATE DATABASE IF NOT EXISTS db_quantum_finance
@@ -128,7 +128,7 @@ CREATE TABLE tb_transacao(
 COMMIT;
 ```
 
-2. Inclusão de Dados nas Tabelas
+2. Inclusão dos Dados nas Tabelas
 
 ```MySQL
 DROP DATABASE IF EXISTS db_quantum_finance;
