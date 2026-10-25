@@ -23,10 +23,10 @@ CREATE  TABLE tb_cliente (
 	cd_ddi_telefone_movel_cliente VARCHAR(4) NOT NULL,
 	cd_ddd_telefone_movel_cliente VARCHAR(3) NOT NULL,
 	cd_telefone_movel_cliente VARCHAR(15) NOT NULL,
-	ds_email_cliente VARCHAR(50) NOT NULL,
+	ds_email_cliente VARCHAR(254) NOT NULL,
 	dt_registro_cliente DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	ds_segmento_cliente  VARCHAR(30) NOT NULL,
-	ds_situacao_cliente VARCHAR(7) NOT NULL,
+	ds_situacao_cliente VARCHAR(9) NOT NULL,
 
 	CONSTRAINT chk_cpf_cliente CHECK (
 		cd_cpf_cliente REGEXP '^[0-9]{11}$'
