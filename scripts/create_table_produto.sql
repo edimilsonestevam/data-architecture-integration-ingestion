@@ -6,6 +6,9 @@ CREATE TABLE tb_produto(
     dt_registro_produto DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     id_conta INT NOT NULL,
     
+    CONSTRAINT chk_preco_produto CHECK(
+        vl_preco_produto >= 0),
+    
     CONSTRAINT pk_id_produto PRIMARY KEY (id_produto),
     CONSTRAINT uq_nm_produto UNIQUE (nm_produto),
     CONSTRAINT fk_id_conta FOREIGN KEY (id_conta) REFERENCES tb_conta(id_conta)
