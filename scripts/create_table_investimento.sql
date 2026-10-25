@@ -16,7 +16,7 @@ CREATE TABLE tb_investimento(
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
     
-    CONSTRAINT fk_id_conta FOREIGN KEY (id_conta) REFERENCES tb_conta(id_conta)
+    CONSTRAINT fk_id_conta_investimento FOREIGN KEY (id_conta) REFERENCES tb_conta(id_conta)
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 );
