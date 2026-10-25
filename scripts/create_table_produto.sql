@@ -7,7 +7,8 @@ CREATE TABLE tb_produto(
     id_conta INT NOT NULL,
     
     CONSTRAINT chk_preco_produto CHECK(
-        vl_preco_produto >= 0),
+        vl_preco_produto >= 0
+    ),
     
     CONSTRAINT pk_id_produto PRIMARY KEY (id_produto),
     CONSTRAINT uq_nm_produto UNIQUE (nm_produto),
