@@ -4,8 +4,6 @@
 
 ![1792893117577](image/1792893117577.png)
 
----
-
 **Linguagem de Definição de Dados (DDL)**
 
 1. Criação do Banco de Dados e Tabelas
