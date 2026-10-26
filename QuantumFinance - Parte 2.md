@@ -58,15 +58,15 @@ CREATE  TABLE tb_cliente (
 		cd_endereco_cep_cliente REGEXP '^[0-9]{8}$'
 	),
 	CONSTRAINT chk_ddi_telefone_fixo_cliente CHECK(
-		cd_ddi_telefone_fixo_cliente REGEXP IS NULL
+		cd_ddi_telefone_fixo_cliente IS NULL
 		OR cd_ddi_telefone_fixo_cliente REGEXP '^[0-9]{1,4}$'
 	),
 	CONSTRAINT chk_ddd_telefone_fixo_cliente CHECK(
-		cd_ddd_telefone_fixo_cliente REGEXP IS NULL
+		cd_ddd_telefone_fixo_cliente IS NULL
 		OR cd_ddd_telefone_fixo_cliente REGEXP '^[0-9]{1,3}$'
 	),
 	CONSTRAINT chk_telefone_fixo_cliente CHECK(
-		cd_telefone_fixo_cliente REGEXP IS NULL
+		cd_telefone_fixo_cliente IS NULL
 		OR cd_telefone_fixo_cliente REGEXP '^[0-9]{1,15}$'
 	),
 	CONSTRAINT chk_ddi_telefone_movel_cliente CHECK(
