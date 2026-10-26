@@ -7,6 +7,9 @@ CREATE  TABLE tb_conta (
     id_cliente INT NOT NULL,
     id_agencia_conta INT NOT NULL,
     
+    CONSTRAINT chk_valor_conta CHECK(
+        vl_conta >= 0
+    ),
     CONSTRAINT chk_tipo_conta CHECK(
         ds_tipo_conta IN ('CORRENTE', 'POUPANCA', 'SALARIO', 'INVESTIMENTO')
     ),    
