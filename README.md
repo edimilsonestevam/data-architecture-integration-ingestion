@@ -27,9 +27,9 @@ Com time técnico, vocês decidem sustentar essa operação em um banco relacion
 
 • Apliquem normalização até a 3FN
 
-• Gerem o script DDL (CREATE TABLE)
+• Gerem o script DDL (CREATE)
 
-• Criem 5 mil linhas sintéticas para popular o modelo (INSERT TABLE)
+• Criem 5 mil linhas sintéticas para popular o modelo (INSERT)
 
 **Formato da Entrega 02**
 
