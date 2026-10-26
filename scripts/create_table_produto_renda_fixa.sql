@@ -7,6 +7,7 @@ CREATE TABLE tb_produto_renda_fixa(
     vl_taxa_produto_renda_fixa DECIMAL(5,2) NOT NULL,
     ds_periodicidade_taxa_produto_renda_fixa VARCHAR(20) NOT NULL,
     dt_registro_produto_renda_fixa DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    id_produto INT NOT NULL,
     
     CONSTRAINT chk_produto_renda_fixa CHECK(
         vl_produto_renda_fixa >= 0
@@ -22,7 +23,10 @@ CREATE TABLE tb_produto_renda_fixa(
     ),
     
     CONSTRAINT pk_id_produto_renda_fixa PRIMARY KEY (id_produto_renda_fixa),
-    CONSTRAINT uq_nm_produto_renda_fixa UNIQUE (nm_produto_renda_fixa)
+    CONSTRAINT uq_nm_produto_renda_fixa UNIQUE (nm_produto_renda_fixa),
+    CONSTRAINT fk_id_produto_renda_fixa FOREIGN KEY (id_produto) REFERENCES tb_produto(id_produto)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE
 );
 
 COMMIT;

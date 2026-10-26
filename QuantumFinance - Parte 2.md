@@ -186,6 +186,7 @@ CREATE TABLE tb_produto_renda_fixa(
     vl_taxa_produto_renda_fixa DECIMAL(5,2) NOT NULL,
     ds_periodicidade_taxa_produto_renda_fixa VARCHAR(20) NOT NULL,
     dt_registro_produto_renda_fixa DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    id_produto INT NOT NULL,
   
     CONSTRAINT chk_produto_renda_fixa CHECK(
         vl_produto_renda_fixa >= 0
@@ -201,7 +202,10 @@ CREATE TABLE tb_produto_renda_fixa(
     ),
   
     CONSTRAINT pk_id_produto_renda_fixa PRIMARY KEY (id_produto_renda_fixa),
-    CONSTRAINT uq_nm_produto_renda_fixa UNIQUE (nm_produto_renda_fixa)
+    CONSTRAINT uq_nm_produto_renda_fixa UNIQUE (nm_produto_renda_fixa),
+    CONSTRAINT fk_id_produto_renda_fixa FOREIGN KEY (id_produto) REFERENCES tb_produto(id_produto)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
 CREATE TABLE tb_produto_poupanca(
@@ -210,6 +214,7 @@ CREATE TABLE tb_produto_poupanca(
     vl_produto_poupanca DECIMAL(15,2) NOT NULL,
     dt_registro_produto_poupanca DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     ds_situacao_produto_poupanca VARCHAR(10) NOT NULL,
+    id_produto INT NOT NULL,
   
     CONSTRAINT chk_vl_produto_poupanca CHECK(
         vl_produto_poupanca >= 0
@@ -219,7 +224,10 @@ CREATE TABLE tb_produto_poupanca(
     ),
   
     CONSTRAINT pk_id_produto_poupanca PRIMARY KEY (id_produto_poupanca),
-    CONSTRAINT uq_nm_produto_poupanca UNIQUE (nm_produto_poupanca)
+    CONSTRAINT uq_nm_produto_poupanca UNIQUE (nm_produto_poupanca),
+    CONSTRAINT fk_id_produto_poupanca FOREIGN KEY (id_produto) REFERENCES tb_produto(id_produto)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
 CREATE TABLE tb_movimentacao(
