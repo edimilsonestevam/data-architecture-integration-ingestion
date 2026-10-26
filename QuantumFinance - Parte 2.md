@@ -179,28 +179,8 @@ CREATE TABLE tb_produto(
 
 CREATE TABLE tb_produto_renda_fixa(
     id_produto_renda_fixa INT NOT NULL AUTO_INCREMENT,
-    nm_produto_renda_fixa VARCHAR(100) NOT NULL,
-    ds_produto_renda_fixa VARCHAR(255),
-    ds_situacao_produto_renda_fixa VARCHAR(10) NOT NULL,
-    vl_produto_renda_fixa DECIMAL(15,2) NOT NULL,
-    vl_taxa_produto_renda_fixa DECIMAL(5,2) NOT NULL,
-    ds_periodicidade_taxa_produto_renda_fixa VARCHAR(20) NOT NULL,
-    dt_registro_produto_renda_fixa DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     id_produto INT NOT NULL,
-  
-    CONSTRAINT chk_produto_renda_fixa CHECK(
-        vl_produto_renda_fixa >= 0
-    ),
-    CONSTRAINT chk_taxa_produto_renda_fixa CHECK(
-        vl_taxa_produto_renda_fixa BETWEEN 000.00 AND 100.00
-    ),
-    CONSTRAINT chk_periodicidade_taxa_produto_renda_fixa CHECK(
-        ds_periodicidade_taxa_produto_renda_fixa IN ('DIARIA', 'SEMANAL', 'MENSAL', 'ANUAL')
-    ), 
-    CONSTRAINT chk_situacao_produto_renda_fixa CHECK(
-        ds_situacao_produto_renda_fixa IN ('ATIVO', 'INATIVO', 'SUSPENSO')
-    ),
-  
+
     CONSTRAINT pk_id_produto_renda_fixa PRIMARY KEY (id_produto_renda_fixa),
     CONSTRAINT uq_nm_produto_renda_fixa UNIQUE (nm_produto_renda_fixa),
     CONSTRAINT fk_id_produto_renda_fixa FOREIGN KEY (id_produto) REFERENCES tb_produto(id_produto)
@@ -210,21 +190,9 @@ CREATE TABLE tb_produto_renda_fixa(
 
 CREATE TABLE tb_produto_poupanca(
     id_produto_poupanca INT NOT NULL AUTO_INCREMENT,
-    nm_produto_poupanca VARCHAR(100) NOT NULL,
-    vl_produto_poupanca DECIMAL(15,2) NOT NULL,
-    dt_registro_produto_poupanca DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    ds_situacao_produto_poupanca VARCHAR(10) NOT NULL,
     id_produto INT NOT NULL,
   
-    CONSTRAINT chk_vl_produto_poupanca CHECK(
-        vl_produto_poupanca >= 0
-    ),
-    CONSTRAINT chk_situacao_produto_poupanca CHECK(
-        ds_situacao_produto_poupanca IN ('ATIVA', 'INATIVA', 'SUSPENSA')
-    ),
-  
     CONSTRAINT pk_id_produto_poupanca PRIMARY KEY (id_produto_poupanca),
-    CONSTRAINT uq_nm_produto_poupanca UNIQUE (nm_produto_poupanca),
     CONSTRAINT fk_id_produto_poupanca FOREIGN KEY (id_produto) REFERENCES tb_produto(id_produto)
     ON DELETE RESTRICT
     ON UPDATE CASCADE
