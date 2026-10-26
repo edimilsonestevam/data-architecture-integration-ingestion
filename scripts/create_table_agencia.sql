@@ -30,6 +30,6 @@ CREATE TABLE tb_agencia(
 	
     CONSTRAINT pk_id_agencia PRIMARY KEY (id_agencia),
     CONSTRAINT uq_nm_agencia UNIQUE (nm_agencia)
-) ;
+);
 
 COMMIT;
