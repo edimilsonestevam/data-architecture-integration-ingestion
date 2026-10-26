@@ -29,8 +29,9 @@ CREATE  TABLE tb_cliente (
 	ds_profissao_cliente VARCHAR(100) NOT NULL,
 	vl_renda_bruta_cliente DECIMAL(15,2) NOT NULL,
 	ds_endereco_avenida_rua_cliente VARCHAR(175) NOT NULL,
-	ds_endereco_casa_apto_numero_cliente VARCHAR(20) NOT NULL,
-	ds_endereco_apto_andar_cliente VARCHAR(20),
+	cd_endereco_numero_casa_predio_cliente VARCHAR(20) NOT NULL,
+	cd_endereco_numero_andar_cliente VARCHAR(20),
+	cd_endereco_numero_apto_cliente VARCHAR(20),
 	cd_endereco_cep_cliente VARCHAR(8) NOT NULL,
 	ds_endereco_bairro_cliente VARCHAR(100) NOT NULL,
 	ds_endereco_cidade_cliente VARCHAR(175) NOT NULL,
@@ -56,20 +57,18 @@ CREATE  TABLE tb_cliente (
 	CONSTRAINT chk_cep_numero_cliente CHECK (
 		cd_endereco_cep_cliente REGEXP '^[0-9]{8}$'
 	),
-
-	CONSTRAINT chk_telefone_fixo_completo CHECK(
-		(
-		cd_ddi_telefone_fixo_cliente IS NULL
-		AND cd_ddd_telefone_fixo_cliente IS NULL
-		AND cd_telefone_fixo_cliente IS NULL
-		)
-		OR(
-		cd_ddi_telefone_fixo_cliente IS NOT NULL
-		AND cd_ddd_telefone_fixo_cliente IS NOT NULL
-		AND cd_telefone_fixo_cliente IS NOT NULL
-		)
+	CONSTRAINT chk_ddi_telefone_fixo_cliente CHECK(
+		cd_ddi_telefone_fixo_cliente REGEXP IS NULL
+		OR cd_ddi_telefone_fixo_cliente REGEXP '^[0-9]{1,4}$'
 	),
-
+	CONSTRAINT chk_ddd_telefone_fixo_cliente CHECK(
+		cd_ddd_telefone_fixo_cliente REGEXP IS NULL
+		OR cd_ddd_telefone_fixo_cliente REGEXP '^[0-9]{1,3}$'
+	),
+	CONSTRAINT chk_telefone_fixo_cliente CHECK(
+		cd_telefone_fixo_cliente REGEXP IS NULL
+		OR cd_telefone_fixo_cliente REGEXP '^[0-9]{1,15}$'
+	),
 	CONSTRAINT chk_ddi_telefone_movel_cliente CHECK(
 		cd_ddi_telefone_movel_cliente REGEXP '^[0-9]{1,4}$'
 	),
@@ -81,7 +80,7 @@ CREATE  TABLE tb_cliente (
 	),
 
 	CONSTRAINT chk_situacao_cliente CHECK (
-		ds_situacao_cliente IN ('ATIVO', 'INATIVO', 'BLOQUEADO')
+		ds_situacao_cliente IN ('ATIVO', 'INATIVO', 'SUSPENSO')
 	),
 
 	CONSTRAINT pk_id_cliente PRIMARY KEY (id_cliente),
