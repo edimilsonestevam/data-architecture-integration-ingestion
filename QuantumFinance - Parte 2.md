@@ -529,8 +529,6 @@ COMMIT;
 <código fonte>
 ```
 
-```
-
 4. Exclusão do Banco de Dados
 
 ```MySQL
