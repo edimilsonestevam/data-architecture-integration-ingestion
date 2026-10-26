@@ -174,7 +174,7 @@ CREATE TABLE tb_produto_renda_fixa(
     CONSTRAINT fk_id_produto_renda_fixa FOREIGN KEY (id_produto) REFERENCES tb_produto(id_produto)
     ON DELETE RESTRICT
     ON UPDATE CASCADE
- ENGINE = InnoDB;
+) ENGINE = InnoDB;
 
 CREATE TABLE tb_produto_poupanca(
     id_produto_poupanca INT NOT NULL AUTO_INCREMENT,
