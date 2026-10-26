@@ -202,7 +202,7 @@ CREATE TABLE tb_investimento(
     id_produto INT NOT NULL,
     id_conta INT NOT NULL,
     
-    CONSTRAINT chk_valor_investimento CHECK(
+    CONSTRAINT chk_aplicado_investimento CHECK(
         vl_aplicado_investimento > 0
     ),
     CONSTRAINT chk_rendimento_investimento CHECK(
