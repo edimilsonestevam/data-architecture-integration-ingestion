@@ -21,4 +21,6 @@ CREATE TABLE tb_movimentacao(
     CONSTRAINT fk_id_conta_movimentacao FOREIGN KEY (id_conta) REFERENCES tb_conta(id_conta)
     ON DELETE RESTRICT
     ON UPDATE CASCADE
-) ENGINE = InnoDB;
+);
+
+COMMIT;
