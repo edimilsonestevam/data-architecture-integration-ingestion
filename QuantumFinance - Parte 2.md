@@ -520,9 +520,18 @@ INSERT INTO tb_transacao (
 );
 
 COMMIT;
+
 ```
 
-3. Exclusão do Banco de Dados
+3. Consultando os Dados
+
+```MySQL
+<código fonte>
+```
+
+```
+
+4. Exclusão do Banco de Dados
 
 ```MySQL
 DROP DATABASE IF EXISTS db_quantum_finance;
