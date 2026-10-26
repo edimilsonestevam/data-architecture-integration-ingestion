@@ -145,6 +145,7 @@ CREATE TABLE tb_produto(
     ds_situacao_produto VARCHAR(10) NOT NULL,
     vl_produto DECIMAL(15,2) NOT NULL,
     vl_taxa_produto DECIMAL(5,2) NOT NULL,
+    ds_periodicidade_taxa_produto VARCHAR(20) NOT NULL,
     dt_registro_produto DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
     CONSTRAINT chk_produto CHECK(
@@ -153,6 +154,9 @@ CREATE TABLE tb_produto(
     CONSTRAINT chk_taxa_produto CHECK(
         vl_taxa_produto >= 000.00 AND
         vl_taxa_produto <= 100.00
+    ),
+    CONSTRAINT chk_periodicidade_taxa_produto CHECK(
+        ds_periodicidade_taxa_produto IN ('DIARIA', 'SEMANAL', 'MENSAL', 'ANUAL')
     ), 
     CONSTRAINT chk_situacao_produto CHECK(
         ds_situacao_produto IN ('ATIVO', 'INATIVO', 'SUSPENSO')
@@ -204,8 +208,8 @@ CREATE TABLE tb_investimento(
     CONSTRAINT chk_rendimento_investimento CHECK(
         vl_rendimento_investimento >= 0
     ),
-    CONSTRAINT chk_investimento CHECK(
-        vl_total_investimento >= 0
+    CONSTRAINT chk_total_investimento CHECK(
+        vl_total_investimento = vl_aplicado_investimento + vl_rendimento_investimento
     ),
     CONSTRAINT chk_vencimento_investimento CHECK(
         dt_vencimento_investimento >= DATE(dt_registro_investimento)

@@ -15,8 +15,8 @@ CREATE TABLE tb_investimento(
     CONSTRAINT chk_rendimento_investimento CHECK(
         vl_rendimento_investimento >= 0
     ),
-    CONSTRAINT chk_investimento CHECK(
-        vl_total_investimento >= 0
+    CONSTRAINT chk_total_investimento CHECK(
+        vl_total_investimento = vl_aplicado_investimento + vl_rendimento_investimento
     ),
     CONSTRAINT chk_vencimento_investimento CHECK(
         dt_vencimento_investimento >= DATE(dt_registro_investimento)
