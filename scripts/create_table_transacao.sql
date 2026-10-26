@@ -6,6 +6,7 @@ CREATE TABLE tb_transacao(
     ds_descricao_transacao VARCHAR(100),
     vl_transacao DECIMAL(15,2) NOT NULL,
     id_investimento INT NOT NULL,
+    id_movimentacao INT NOT NULL,
     
     CONSTRAINT chk_tipo_transacao CHECK(
         ds_tipo_transacao IN ('APLICACAO', 'RESGATE', 'COMPRA', 'VENDA')
@@ -19,6 +20,9 @@ CREATE TABLE tb_transacao(
     
     CONSTRAINT pk_id_transacao PRIMARY KEY (id_transacao),
     CONSTRAINT fk_id_investimento FOREIGN KEY (id_investimento) REFERENCES tb_investimento(id_investimento)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE,
+    CONSTRAINT fk_id_movimentacao FOREIGN KEY (id_movimentacao) REFERENCES tb_movimentacao(id_movimentacao)
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 );
