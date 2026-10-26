@@ -34,7 +34,7 @@ CREATE  TABLE tb_cliente (
 	CONSTRAINT chk_renda_bruta_cliente CHECK (
 		vl_renda_bruta_cliente >= 0
 	),
-	CONSTRAINT chk_cep_numero CHECK (
+	CONSTRAINT chk_cep_numero_cliente CHECK (
 		cd_endereco_cep_cliente REGEXP '^[0-9]{8}$'
 	),
 	CONSTRAINT chk_ddi_telefone_fixo_cliente CHECK(

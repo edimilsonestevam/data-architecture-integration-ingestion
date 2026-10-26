@@ -53,7 +53,7 @@ CREATE  TABLE tb_cliente (
 	CONSTRAINT chk_renda_bruta_cliente CHECK (
 		vl_renda_bruta_cliente >= 0
 	),
-	CONSTRAINT chk_cep_numero CHECK (
+	CONSTRAINT chk_cep_numero_cliente CHECK (
 		cd_endereco_cep_cliente REGEXP '^[0-9]{8}$'
 	),
 
@@ -106,7 +106,7 @@ CREATE TABLE tb_agencia(
     dt_registro_agencia DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     ds_agencia VARCHAR(255),
   
-    CONSTRAINT chk_cep_numero CHECK (
+    CONSTRAINT chk_cep_numero_agencia CHECK (
 		cd_endereco_cep_agencia REGEXP '^[0-9]{8}$'
 	),
     CONSTRAINT chk_ddi_telefone_fixo_agencia CHECK(
