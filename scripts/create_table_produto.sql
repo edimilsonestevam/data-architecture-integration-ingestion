@@ -14,7 +14,7 @@ CREATE TABLE tb_produto(
         vl_taxa_contrato_produto >= 000.00
     ), 
     CONSTRAINT chk_situacao_produto CHECK(
-        ds_situacao_produto IN ('ATIVO', 'INATIVO', 'BLOQUEADO')
+        ds_situacao_produto IN ('ATIVO', 'INATIVO', 'SUSPENSO')
     ),
     
     CONSTRAINT pk_id_produto PRIMARY KEY (id_produto),

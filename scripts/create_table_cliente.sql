@@ -60,7 +60,7 @@ CREATE  TABLE tb_cliente (
 	),	
 	
 	CONSTRAINT chk_situacao_cliente CHECK (
-		ds_situacao_cliente IN ('ATIVO', 'INATIVO', 'BLOQUEADO')
+		ds_situacao_cliente IN ('ATIVO', 'INATIVO', 'SUSPENSO')
 	),
 	
 	CONSTRAINT pk_id_cliente PRIMARY KEY (id_cliente),

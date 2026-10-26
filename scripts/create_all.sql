@@ -76,6 +76,21 @@ CREATE  TABLE tb_cliente (
 	CONSTRAINT uq_email_cliente UNIQUE (ds_email_cliente)
  ) ENGINE = InnoDB;
  
+CREATE TABLE tb_agencia(
+    id_agencia INT NOT NULL AUTO_INCREMENT,
+    nm_agencia VARCHAR(100) NOT NULL,
+    ds_agencia VARCHAR(255),
+    ds_situacao_agencia VARCHAR(10) NOT NULL,
+    dt_registro_agencia DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT chk_situacao_agencia CHECK(
+        ds_situacao_agencia IN ('ATIVA', 'INATIVA', 'SUSPENSA')
+    ),
+    
+    CONSTRAINT pk_id_agencia PRIMARY KEY (id_agencia),
+    CONSTRAINT uq_nm_agencia UNIQUE (nm_agencia)
+) ENGINE = InnoDB;
+
 CREATE  TABLE tb_conta ( 
     id_conta INT NOT NULL AUTO_INCREMENT,
     ds_tipo_conta VARCHAR(20) NOT NULL,
@@ -83,6 +98,7 @@ CREATE  TABLE tb_conta (
     dt_registro_conta DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     ds_situacao_conta VARCHAR(9) NOT NULL,
     id_cliente INT NOT NULL,
+    id_agencia_conta INT NOT NULL,
     
     CONSTRAINT chk_tipo_conta CHECK(
         ds_tipo_conta IN ('CORRENTE', 'POUPANCA', 'SALARIO', 'INVESTIMENTO')
@@ -98,7 +114,10 @@ CREATE  TABLE tb_conta (
     CONSTRAINT pk_id_conta PRIMARY KEY (id_conta),
     CONSTRAINT fk_id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id_cliente)
     ON DELETE RESTRICT
-    ON UPDATE CASCADE 
+    ON UPDATE CASCADE,
+    CONSTRAINT fk_id_agencia_conta FOREIGN KEY (id_agencia_conta) REFERENCES tb_agencia(id_agencia)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
 CREATE TABLE tb_produto(
