@@ -2,7 +2,7 @@
 
 **Diagrama Entidade Relacionamento**
 
-![1793040228997](image/1793040228999.png)
+![1793040228997](image/1793040229000.png)
 
 **Linguagem de Definição de Dados (DDL)**
 
@@ -542,6 +542,6 @@ SELECT COUNT(*) AS total_transacoes FROM tb_transacao;
 DROP DATABASE IF EXISTS db_quantum_finance;
 ```
 
-| COLABORADOR                |                |
-| -------------------------- | -------------  |
-| Edimilson Estevam da Cruz  | RM377408       |
+| COLABORADOR               |          |
+| ------------------------- | -------- |
+| Edimilson Estevam da Cruz | RM377408 |
