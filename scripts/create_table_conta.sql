@@ -9,11 +9,7 @@ CREATE  TABLE tb_conta (
     
     CONSTRAINT chk_tipo_conta CHECK(
         ds_tipo_conta IN ('CORRENTE', 'POUPANCA', 'SALARIO', 'INVESTIMENTO')
-    ),
-    CONSTRAINT chk_conta CHECK (
-        vl_conta >= 0
-    ),
-    
+    ),    
     CONSTRAINT chk_situacao_conta CHECK (
         ds_situacao_conta IN ('ATIVA', 'INATIVA', 'SUSPENSA')
     ),

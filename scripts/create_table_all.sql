@@ -119,15 +119,11 @@ CREATE  TABLE tb_conta (
     dt_registro_conta DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     ds_situacao_conta VARCHAR(9) NOT NULL,
     id_cliente INT NOT NULL,
-    id_agencia INT NOT NULL,
+    id_agencia_conta INT NOT NULL,
     
     CONSTRAINT chk_tipo_conta CHECK(
         ds_tipo_conta IN ('CORRENTE', 'POUPANCA', 'SALARIO', 'INVESTIMENTO')
-    ),
-    CONSTRAINT chk_conta CHECK (
-        vl_conta >= 0
-    ),
-    
+    ),    
     CONSTRAINT chk_situacao_conta CHECK (
         ds_situacao_conta IN ('ATIVA', 'INATIVA', 'SUSPENSA')
     ),
@@ -136,7 +132,7 @@ CREATE  TABLE tb_conta (
     CONSTRAINT fk_id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id_cliente)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
-    CONSTRAINT fk_id_agencia_conta FOREIGN KEY (id_agencia) REFERENCES tb_agencia(id_agencia)
+    CONSTRAINT fk_id_agencia_conta FOREIGN KEY (id_agencia_conta) REFERENCES tb_agencia(id_agencia)
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 ) ENGINE = InnoDB;
