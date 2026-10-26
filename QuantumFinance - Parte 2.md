@@ -541,3 +541,7 @@ SELECT COUNT(*) AS total_transacoes FROM tb_transacao;
 ```MySQL
 DROP DATABASE IF EXISTS db_quantum_finance;
 ```
+
+| COLABORADOR                |                |
+| -------------------------- | -------------  |
+| Edimilson Estevam da Cruz  | RM377408       |
