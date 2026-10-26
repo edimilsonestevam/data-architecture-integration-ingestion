@@ -13,7 +13,7 @@ CREATE TABLE tb_investimento(
         vl_aplicado_investimento > 0
     ),
     CONSTRAINT chk_rendimento_investimento CHECK(
-        vl_rendimento_investimento >= 0
+        vl_rendimento_investimento >= vl_aplicado_investimento
     ),
     CONSTRAINT chk_saldo_investimento CHECK(
         vl_saldo_investimento >= 0
