@@ -7,3 +7,6 @@ SELECT COUNT(*) AS total_produtos FROM tb_produto;
 SELECT COUNT(*) AS total_investimentos FROM tb_investimento;
 SELECT COUNT(*) AS total_movimentacoes FROM tb_movimentacao;
 SELECT COUNT(*) AS total_transacoes FROM tb_transacao;
+
+SELECT COUNT(*) AS total_clientes
+FROM tb_cliente;
