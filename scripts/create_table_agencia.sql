@@ -27,6 +27,9 @@ CREATE TABLE tb_agencia(
 	CONSTRAINT chk_telefone_fixo_agencia CHECK(
 		cd_telefone_fixo_agencia REGEXP '^[0-9]{1,15}$'
 	),	
+	CONSTRAINT chk_situacao_agencia CHECK(
+		ds_situacao_agencia IN ('ATIVA', 'INATIVA', 'SUSPENSA')
+	)
 	
     CONSTRAINT pk_id_agencia PRIMARY KEY (id_agencia),
     CONSTRAINT uq_nm_agencia UNIQUE (nm_agencia)

@@ -115,6 +115,9 @@ CREATE TABLE tb_agencia(
 	CONSTRAINT chk_telefone_fixo_agencia CHECK(
 		cd_telefone_fixo_agencia REGEXP '^[0-9]{1,15}$'
 	),
+	CONSTRAINT chk_situacao_agencia CHECK(
+		ds_situacao_agencia IN ('ATIVA', 'INATIVA', 'SUSPENSA')
+	),
 
     CONSTRAINT pk_id_agencia PRIMARY KEY (id_agencia),
     CONSTRAINT uq_nm_agencia UNIQUE (nm_agencia)
@@ -221,6 +224,7 @@ CREATE TABLE tb_investimento(
     ),
     CONSTRAINT chk_total_investimento CHECK(
         vl_total_investimento = vl_aplicado_investimento + vl_rendimento_investimento
+        AND vl_total_investimento >= 0
     ),
     CONSTRAINT chk_vencimento_investimento CHECK(
         dt_vencimento_investimento >= DATE(dt_registro_investimento)
