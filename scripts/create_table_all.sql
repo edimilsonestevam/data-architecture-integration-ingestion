@@ -167,7 +167,6 @@ CREATE TABLE tb_produto(
 ) ENGINE = InnoDB;
 
 CREATE TABLE tb_produto_renda_fixa(
-    id_produto_renda_fixa INT NOT NULL AUTO_INCREMENT,
     id_produto INT NOT NULL,
 
     CONSTRAINT pk_id_produto_renda_fixa PRIMARY KEY (id_produto),
@@ -177,7 +176,6 @@ CREATE TABLE tb_produto_renda_fixa(
 ) ENGINE = InnoDB;
 
 CREATE TABLE tb_produto_poupanca(
-    id_produto_poupanca INT NOT NULL AUTO_INCREMENT,
     id_produto INT NOT NULL,
     
     CONSTRAINT pk_id_produto_poupanca PRIMARY KEY (id_produto),

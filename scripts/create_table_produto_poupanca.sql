@@ -1,5 +1,4 @@
 CREATE TABLE tb_produto_poupanca(
-    id_produto_poupanca INT NOT NULL AUTO_INCREMENT,
     id_produto INT NOT NULL,
     
     CONSTRAINT pk_id_produto_poupanca PRIMARY KEY (id_produto),

@@ -1,5 +1,4 @@
 CREATE TABLE tb_produto_renda_fixa(
-    id_produto_renda_fixa INT NOT NULL AUTO_INCREMENT,
     id_produto INT NOT NULL,
 
     CONSTRAINT pk_id_produto_renda_fixa PRIMARY KEY (id_produto),
