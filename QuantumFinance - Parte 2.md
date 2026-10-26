@@ -542,6 +542,12 @@ SELECT COUNT(*) AS total_transacoes FROM tb_transacao;
 DROP DATABASE IF EXISTS db_quantum_finance;
 ```
 
+---
+
+**Observação:** O diretório `scripts` contém o arquivo `insert_values_cinco_mil.sql`, responsável pela carga inicial de 5.000 registros no banco de dados. 
+
+---
+
 | COLABORADOR               |          |
 | ------------------------- | -------- |
 | Edimilson Estevam da Cruz | RM377408 |
