@@ -520,7 +520,6 @@ INSERT INTO tb_transacao (
 );
 
 COMMIT;
-
 ```
 
 3. Consultando os Dados
