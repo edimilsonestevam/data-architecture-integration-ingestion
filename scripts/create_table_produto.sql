@@ -4,14 +4,15 @@ CREATE TABLE tb_produto(
     ds_produto VARCHAR(255),
     ds_situacao_produto VARCHAR(10) NOT NULL,
     vl_produto DECIMAL(15,2) NOT NULL,
-    vl_taxa_produto DECIMAL(3,2) NOT NULL,
+    vl_taxa_produto DECIMAL(5,2) NOT NULL,
     dt_registro_produto DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
     CONSTRAINT chk_produto CHECK(
         vl_produto >= 0
     ),
     CONSTRAINT chk_taxa_produto CHECK(
-        vl_taxa_produto >= 000.00
+        vl_taxa_produto >= 000.00 AND
+        vl_taxa_produto <= 100.00
     ), 
     CONSTRAINT chk_situacao_produto CHECK(
         ds_situacao_produto IN ('ATIVO', 'INATIVO', 'SUSPENSO')
@@ -19,6 +20,6 @@ CREATE TABLE tb_produto(
     
     CONSTRAINT pk_id_produto PRIMARY KEY (id_produto),
     CONSTRAINT uq_nm_produto UNIQUE (nm_produto)
-)
+);
 
 COMMIT;
