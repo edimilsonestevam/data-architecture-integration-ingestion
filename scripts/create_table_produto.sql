@@ -12,8 +12,7 @@ CREATE TABLE tb_produto(
         vl_produto >= 0
     ),
     CONSTRAINT chk_taxa_produto CHECK(
-        vl_taxa_produto >= 000.00 AND
-        vl_taxa_produto <= 100.00
+        vl_taxa_produto BETWEEN 000.00 AND 100.00
     ),
     CONSTRAINT chk_periodicidade_taxa_produto CHECK(
         ds_periodicidade_taxa_produto IN ('DIARIA', 'SEMANAL', 'MENSAL', 'ANUAL')
