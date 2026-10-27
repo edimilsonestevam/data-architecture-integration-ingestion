@@ -528,7 +528,7 @@ COMMIT;
 
 ---
 
-3. Consultando os Dados
+3. Consulta dos Dados
 
 ```MySQL
 USE db_quantum_finance;
@@ -786,7 +786,7 @@ INSERT INTO transacoes_conta_mes (
 
 ---
 
-7. Consultando os Dados
+7. Consulta dos Dados
 
 ```MySQL
 -- =====================================================
