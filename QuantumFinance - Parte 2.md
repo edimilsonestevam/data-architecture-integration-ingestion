@@ -542,6 +542,12 @@ SELECT COUNT(*) AS total_transacoes FROM tb_transacao;
 DROP DATABASE IF EXISTS db_quantum_finance;
 ```
 
+---
+
+**Nota:** O diretório `scripts` contém o arquivo `insert_values_cinco_mil.sql`, responsável pela carga inicial de 5.000 registros no banco de dados.
+
+---
+
 5. Criação do Banco de Dados e Tabelas (Cassandra)
 
 ```MySQL
@@ -801,7 +807,33 @@ DROP KEYSPACE IF EXISTS quantum_finance;
 
 ---
 
-**Observação:** O diretório `scripts` contém o arquivo `insert_values_cinco_mil.sql`, responsável pela carga inicial de 5.000 registros no banco de dados.
+**Modelo Distribuído Quantum Finance**
+
+
+| Tabela                       | Finalidade                                                                                              |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------- |
+| transacoes_conta_dia         | Armazenar transações por conta e dia, permitindo consultar as transações mais recentes diariamente. |
+| transacoes_conta_mes         | Armazenar transações por conta e mês, facilitando consultas e históricos mensais.                   |
+| totais_modalidade_dia_bucket | Armazenar totais financeiros e quantidades de transações por dia, modalidade e shard.                 |
+| obt_transacoes_tempo         | Armazenar dados agregados por período (dia ou mês), modalidade e shard, para análises temporais.     |
+
+---
+
+**Por que utilizar 4 tabelas?**
+
+O Cassandra é um banco de dados NoSQL distribuído, orientado a consultas. Por isso é comum duplicar dados em tabelas diferentes para otimizar os padrões de acesso, em vez de depender de relacionamentos e junções como em bancos relacionais.
+
+• Tabelas 1 e 2: permitem consultar o histórico de transações por dia ou por mês sem precisar percorrer um período inteiro de dados
+
+• Tabela 3: permite distribuir os cálculos financeiros por shards, reduzindo a concentração de operações em uma única partição
+
+• Tabela 4: facilita relatórios e análises temporais sem precisar recalcular todos os dados transacionais a cada consulta
+
+---
+
+**Conclusão**
+
+O modelo distribuído Cassandra é composto por quatro tabelas, projetadas para atender a diferentes necessidades de consulta, armazenamento e agregação de dados, visando otimizar a distribuição e o desempenho do sistema. As tabelas 1 e 2 armazenam os detalhes das transações organizados por conta e período (dia ou mês), enquanto as tabelas 3 e 4 armazenam dados agregados, como valores financeiros e quantidades de transações que devem ser atualizados por processos específicos de agregação.
 
 ---
 
