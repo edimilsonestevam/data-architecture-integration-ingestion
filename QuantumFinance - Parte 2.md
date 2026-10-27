@@ -1,8 +1,10 @@
 ## Proposta de Modelagem de Dados - QuantumFinance
 
-**Diagrama Entidade Relacionamento**
+**Diagrama Entidade Relacionamento (MySQL)**
 
 ![1793040228997](image/1793040229000.png)
+
+---
 
 **Linguagem de Definição de Dados (DDL)**
 
@@ -286,6 +288,8 @@ CREATE TABLE tb_transacao(
 COMMIT;
 ```
 
+---
+
 2. Inclusão dos Dados nas Tabelas
 
 ```MySQL
@@ -522,6 +526,8 @@ INSERT INTO tb_transacao (
 COMMIT;
 ```
 
+---
+
 3. Consultando os Dados
 
 ```MySQL
@@ -536,6 +542,10 @@ SELECT COUNT(*) AS total_movimentacoes FROM tb_movimentacao;
 SELECT COUNT(*) AS total_transacoes FROM tb_transacao;
 ```
 
+
+---
+
+
 4. Exclusão do Banco de Dados
 
 ```MySQL
@@ -545,6 +555,12 @@ DROP DATABASE IF EXISTS db_quantum_finance;
 ---
 
 **Nota:** O diretório `scripts` contém o arquivo `insert_values_cinco_mil.sql`, responsável pela carga inicial de 5.000 registros no banco de dados.
+
+---
+
+**Diagrama Entidade Relacionamento (Cassandra)**
+
+![1793065269750](image/1793065269750.png)
 
 ---
 
@@ -662,6 +678,8 @@ CREATE TABLE IF NOT EXISTS obt_transacoes_tempo (
 );
 ```
 
+---
+
 6. Inclusão dos Dados nas Tabelas
 
 ```MySQL
@@ -766,6 +784,8 @@ INSERT INTO transacoes_conta_mes (
 );
 ```
 
+---
+
 7. Consultando os Dados
 
 ```MySQL
@@ -798,6 +818,8 @@ WHERE dia = '2026-10-26'
   AND modalidade = 'PIX'
   AND shard_id = 0;
 ```
+
+---
 
 8. Exclusão do Banco de Dados
 
