@@ -6,7 +6,7 @@
 
 **Linguagem de Definição de Dados (DDL)**
 
-1. Criação do Banco de Dados e Tabelas
+1. Criação do Banco de Dados e Tabelas (MySQL)
 
 ```MySQL
 CREATE DATABASE IF NOT EXISTS db_quantum_finance
@@ -542,9 +542,162 @@ SELECT COUNT(*) AS total_transacoes FROM tb_transacao;
 DROP DATABASE IF EXISTS db_quantum_finance;
 ```
 
+5. Criação do Banco de Dados e Tabelas (Cassandra)
+
+```MySQL
+
+-- =====================================================
+-- QUANTUM FINANCE - MODELO DISTRIBUIDO CASSANDRA
+-- =====================================================
+
+CREATE KEYSPACE IF NOT EXISTS quantum_finance
+WITH replication = {
+    'class': 'NetworkTopologyStrategy',
+    'datacenter1': 3
+};
+
+USE quantum_finance;
+
+-- =====================================================
+-- TABELA 1: ULTIMAS TRANSACOES POR CONTA E DIA
+-- Bucket temporal: dia
+-- Partition key: (conta_id, dia_bucket)
+-- Clustering: data_hora DESC, transacao_id DESC
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS transacoes_conta_dia (
+    conta_id        text,
+    dia_bucket      date,
+    data_hora       timestamp,
+    transacao_id    timeuuid,
+    modalidade      text,
+    tipo_transacao  text,
+    situacao        text,
+    valor           decimal,
+    descricao       text,
+
+    PRIMARY KEY (
+        (conta_id, dia_bucket),
+        data_hora,
+        transacao_id
+    )
+)
+WITH CLUSTERING ORDER BY (
+    data_hora DESC,
+    transacao_id DESC
+);
+
+-- =====================================================
+-- TABELA 2: TRANSACOES POR CONTA E MES
+-- Bucket temporal: mes (primeiro dia do mes)
+-- Partition key: (conta_id, mes_bucket)
+-- Clustering: data_hora DESC, transacao_id DESC
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS transacoes_conta_mes (
+    conta_id        text,
+    mes_bucket      date,
+    data_hora       timestamp,
+    transacao_id    timeuuid,
+    modalidade      text,
+    tipo_transacao  text,
+    situacao        text,
+    valor           decimal,
+    descricao       text,
+
+    PRIMARY KEY (
+        (conta_id, mes_bucket),
+        data_hora,
+        transacao_id
+    )
+)
+WITH CLUSTERING ORDER BY (
+    data_hora DESC,
+    transacao_id DESC
+);
+
+-- =====================================================
+-- TABELA 3: TOTAL POR MODALIDADE, DIA E SHARD
+-- Partition key: (dia, modalidade, shard_id)
+-- Uma linha por dia, modalidade e shard.
+-- Os totais sao mantidos por processo de agregacao.
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS totais_modalidade_dia_bucket (
+    dia             date,
+    modalidade      text,
+    shard_id        smallint,
+    total_valor     decimal,
+    quantidade      bigint,
+    atualizado_em   timestamp,
+
+    PRIMARY KEY ((dia, modalidade, shard_id))
+);
+
+-- =====================================================
+-- TABELA 4: OBT PARA ANALISE TEMPORAL (OPCIONAL)
+-- Permite totais por dia OU mes e modalidade.
+-- periodo_inicio: data do dia ou primeiro dia do mes.
+-- Cada periodo/modalidade e distribuido por shards.
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS obt_transacoes_tempo (
+    periodo_tipo    text,
+    periodo_inicio  date,
+    modalidade      text,
+    shard_id        smallint,
+    total_valor     decimal,
+    quantidade      bigint,
+    atualizado_em   timestamp,
+
+    PRIMARY KEY (
+        (periodo_tipo, periodo_inicio, modalidade, shard_id)
+    )
+);
+```
+
+6. Título
+
+```MySQL
+<código fonte>
+```
+
+7. Título
+
+```MySQL
+-- =====================================================
+-- Consulta 1 — Últimas transações de uma conta
+-- =====================================================
+
+SELECT *
+FROM transacoes_conta_dia
+WHERE conta_id = 'CONTA-1001'
+  AND dia_bucket = '2026-10-26'
+LIMIT 20;
+
+-- =====================================================
+-- Consulta 2 — Transações de uma conta em determinado mês
+-- =====================================================
+
+SELECT *
+FROM transacoes_conta_mes
+WHERE conta_id = 'CONTA-1001'
+  AND mes_bucket = '2026-10-01';
+  
+-- =====================================================
+-- Consulta 3 — Total transacionado por modalidade em um dia
+-- =====================================================
+
+SELECT total_valor, quantidade
+FROM totais_modalidade_dia_bucket
+WHERE dia = '2026-10-26'
+  AND modalidade = 'PIX'
+  AND shard_id = 0;
+```
+
 ---
 
-**Observação:** O diretório `scripts` contém o arquivo `insert_values_cinco_mil.sql`, responsável pela carga inicial de 5.000 registros no banco de dados. 
+**Observação:** O diretório `scripts` contém o arquivo `insert_values_cinco_mil.sql`, responsável pela carga inicial de 5.000 registros no banco de dados.
 
 ---
 
