@@ -4,7 +4,6 @@ USE db_quantum_finance;
 SET SESSION cte_max_recursion_depth = 5000;
 
 INSERT INTO tb_cliente (
-    id_cliente,
     cd_cpf_cliente,
     nm_primeiro_cliente,
     nm_segundo_cliente,
@@ -41,7 +40,6 @@ WITH RECURSIVE numeros AS (
     WHERE n < 5000
 )
 SELECT
-    n,
     LPAD(n, 11, '0'),
     CONCAT('Cliente', n),
     NULL,
