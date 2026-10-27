@@ -37,6 +37,6 @@ Com time técnico, vocês decidem sustentar essa operação em um banco relacion
 
 • Cole o script CDL no Web App (correção automática)
 
-• Informe qauntas tabelas e o por quê
+• Informe quantas tabelas e o por quê
 
 • Tragam o diagrama ER para a socialização
