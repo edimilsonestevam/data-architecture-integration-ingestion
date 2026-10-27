@@ -290,7 +290,7 @@ COMMIT;
 
 ---
 
-2. Inclusão dos Dados nas Tabelas
+2. Inclusão dos Dados
 
 ```MySQL
 
@@ -680,7 +680,7 @@ CREATE TABLE IF NOT EXISTS obt_transacoes_tempo (
 
 ---
 
-6. Inclusão dos Dados nas Tabelas
+6. Inclusão dos Dados
 
 ```MySQL
 USE quantum_finance;
