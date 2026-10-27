@@ -542,9 +542,7 @@ SELECT COUNT(*) AS total_movimentacoes FROM tb_movimentacao;
 SELECT COUNT(*) AS total_transacoes FROM tb_transacao;
 ```
 
-
 ---
-
 
 4. Exclusão do Banco de Dados
 
@@ -831,7 +829,6 @@ DROP KEYSPACE IF EXISTS quantum_finance;
 
 **Modelo Distribuído Quantum Finance**
 
-
 | Tabela                       | Finalidade                                                                                              |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------- |
 | transacoes_conta_dia         | Armazenar transações por conta e dia, permitindo consultar as transações mais recentes diariamente. |
@@ -856,9 +853,3 @@ O Cassandra é um banco de dados NoSQL distribuído, orientado a consultas. Por 
 **Conclusão**
 
 O modelo distribuído Cassandra é composto por quatro tabelas, projetadas para atender a diferentes necessidades de consulta, armazenamento e agregação de dados, visando otimizar a distribuição e o desempenho do sistema. As tabelas 1 e 2 armazenam os detalhes das transações organizados por conta e período (dia ou mês), enquanto as tabelas 3 e 4 armazenam dados agregados, como valores financeiros e quantidades de transações que devem ser atualizados por processos específicos de agregação.
-
----
-
-| COLABORADOR               |          |
-| ------------------------- | -------- |
-| Edimilson Estevam da Cruz | RM377408 |
